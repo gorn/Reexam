@@ -26,31 +26,31 @@ class Post extends Component{
                 <input
                 type="text"
                 onChange={e => this.setState({ title: e.target.value })}
-                placeholder="How do I hack NASA"
+                placeholder="Title of the job"
                 style={{ width: "200px" }}
                 />
                 <input
                     type="text"
                     onChange={e => this.setState({ company: e.target.value })}
-                    placeholder="How do I hack NASA"
+                    placeholder="Name of your company"
                     style={{ width: "200px" }}
                 />
                 <input
                 type="text"
                 onChange={e => this.setState({ description: e.target.value })}
-                placeholder="I just learn html and want to hack NASA, can you help me?"
+                placeholder="Description of the job"
                 style={{ width: "200px" }}
                 />
                 <input
                     type="text"
                     onChange={e => this.setState({ location: e.target.value })}
-                    placeholder="I just learn html and want to hack NASA, can you help me?"
+                    placeholder="Location of the job"
                     style={{ width: "200px" }}
                 />
                 <input
                     type="text"
                     onChange={e => this.setState({ category: e.target.value })}
-                    placeholder="I just learn html and want to hack NASA, can you help me?"
+                    placeholder="Job category"
                     style={{ width: "200px" }}
                 />
                 <button onClick={() => this.props.postDataToDB(this.state.title,this.state.company, this.state.description, this.state.location, this.state.category )}>

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
-import Jobposts from './components/JobPosts';
+import JobPosts from './components/JobPosts';
 import Login from './components/Login';
 import Post from './components/Post';
 
@@ -10,21 +10,38 @@ class App extends Component{
     constructor(props) {
         super(props);
 
-        this.state = { jobs: [] };
+        this.state = {
+            jobs: [],
+            areas: []
+        };
 
         this.postDataToDB = this.postDataToDB.bind(this);
     }
 
-    async componentWillMount() {
+    componentDidMount() {
         //await data.
-        const response = await fetch(
-            `/api/questions`
-        );
-        const json = await response.json();
-        this.setState({ questions: json });
+        this.getJobs()
+        this.getLocation()
     }
 
-    postDataToDB(title, description){
+    async getJobs () {
+        const response = await fetch(
+            `http://localhost:5000/api/jobs`
+        );
+        const json = await response.json();
+        this.setState({ jobs: json });
+    }
+
+    async getLocation (){
+        const response = await fetch(`http://localhost:5000/api/jobs/locations`);
+        console.log(response)
+        // const json = await response.json();
+        // this.setState({areas:json})
+
+
+        }
+
+    postDataToDB(title, company, description, location, category){
         fetch(`http://localhost:5000/api/jobs/post`, {
             method:'post',
             body: JSON.stringify({
@@ -40,13 +57,26 @@ class App extends Component{
     }
 
     render() {
+        var jobs = this.state.jobs;
         return (
             <div className="App">
                 <Router>
                     <Switch>
-                        <Route exact path = '/' component={Jobposts}/>
+                        <Route exact path = '/'
+                               render={(props)=>
+                                   <JobPosts {...props}
+                                        jobs={jobs}
+                                   />
+                               }
+                            />
                         <Route exact path='/login' component={Login}/>
                         <Route exact path='/post' component={Post}/>
+                        <Route exact path={'/post'}
+                               render={(props) =>
+                                   <Post {...props}
+                                                 header={'Post job add'} postDataToDB={this.postDataToDB} form={this.postDataToDB}/>
+                               }
+                        />
 
                     </Switch>
                 </Router>

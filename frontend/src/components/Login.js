@@ -23,7 +23,7 @@ class Login extends Component{
           headers: {
               'Content-Type': 'application/json'
           }
-      }).then(res=>{
+      }).then(res => {
           if (res.status === 200) {
               console.log('hello world');
               this.props.history.push('/');
