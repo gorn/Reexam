@@ -28,5 +28,8 @@ mongoose.connect(mongoString, function(err) {
 
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/jobs', require('./routes/api/jobs'));
+app.use('/api/locations', require('./routes/api/locations'));
+app.use('/api/categories', require('./routes/api/categories'));
+
 
 app.listen(port, () => console.log(`Exam API running on port ${port}!`));

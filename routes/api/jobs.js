@@ -1,62 +1,37 @@
 const express = require('express');
 const router = express.Router();
 
-const Jobs = require('../../schemas/Jobs');
-const Area = require('../../schemas/Jobs');
-const authentication = require('../../authentication');
+const Albi = require('../../schemas/Jobs');
 
 router.get('/', (req, res) =>{
-    Jobs.find({})
+    Albi.find({})
         .populate('category')
         .populate('area')
-        .exec(jobs =>res.json(jobs))
+        .exec()
+            .then(albi =>res.json(albi))
+            .catch(err => res.send(err))
 });
 
-router.get('/:id',  (req,res) => {
-    Jobs.find({id: req.params.id}, (err, job) =>{
-        res.json(job)
+
+// router.get('/:location/:category', (req, res) =>{
+//     Albi.find({location: req.params.location, category: req.params.category},(err, albi)=>{
+//         if(err){
+//             res.send(err);
+//         }
+//         res.json({success: true, data: albi});
+//     });
+// });
+
+router.post('/albi/post', (req, res) => {
+    const newAlbi = req.body;
+    const albi = new Albi({
+        title: newAlbi.title,
+        company: newAlbi.company,
+        description: newAlbi.description,
+        area:newAlbi.area,
+        category: newAlbi.category
     });
-});
-router.get('/locations', (req, res) =>{
-    Area.find({}, (err,area) => {
-        res.json(area)
-    })
-});
-
-router.get('/:location', (req, res) =>{
-    Jobs.find({area: req.params.area}, (err,jobs) => {
-        res.json(jobs)
-    })
-});
-
-router.get('/:category', (req, res) => {
-    Jobs.find({category: req.params.category}, (err, jobs)=>{
-        res.json(jobs)
-    })
-});
-
-router.get('/:location/:category', (req, res) =>{
-   Jobs.find(
-       {
-       area: req.params.area,
-       category: req.params.category},
-       (err, jobs) => {
-           res.json(jobs)
-       })
-});
-
-
-router.post('/post', (req, res)=>{
-    const newJob = req.body;
-    const job = new Jobs({
-        title: newJob.title,
-        company: newJob.company,
-        description: newJob.description,
-        area: newJob.area,
-        category: newJob.category
-    });
-    job.save();
-    res.json({ msg: `You have posted new question`, job: newJob});
-
+    albi.save();
+    res.json({albi: newAlbi})
 });
 module.exports = router;
