@@ -61,9 +61,12 @@ class App extends Component{
 
     getCategoriesFromDb = () => {
         fetch("http://localhost:5000/api/categories")
-            .then(categories => categories.json())
-            .then(res => this.setState({ categories: res.data }));
-        this.categoryStorage()
+             .then(response => response.json())
+            //// jen pro debug
+            //  .then(response => console.log(response.categories) ) 
+             .then(res => {this.setState({ categories: res.categories }); } );
+        this.categoryStorage();
+        ;
     };
     // getLocationsFromDb = () => {
     //     fetch("http://localhost:5000/api/locations")

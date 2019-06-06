@@ -11,7 +11,7 @@ class Categories extends Component{
 
         // let categories = this.props.categories;
         // // let jobs = this.props.jobs;
-        // console.log(this.props.categories);
+        console.log(this.props.categories);
         // if(categories <= 0){
         //     return  <p>Categories loading...</p>
         // }
@@ -22,15 +22,12 @@ class Categories extends Component{
                 <h1>Categories</h1>
 
                 {this.props.categories.map(dat => {
-                    return <Link key={dat._id} to={`/jobs/${dat.namePath}`}><p>{dat.categoryName} <br></br>
+                    return <Link key={dat._id} to={`/jobs/${dat.namePath}`}><p>{dat.name} <br></br>
                     </p></Link>
                 })}
             </div>
 
         )
-            <script>
-            window.addEventListener("load", console.log(this))
-            </script>
     }
 }
 export default Categories;
