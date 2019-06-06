@@ -7,6 +7,7 @@ class Categories extends Component{
         return(
             <div>
                 <Link to ={"/login"}> <p>Login</p></Link>
+                <Link to={"/post"}><p>Post</p></Link>
                 <h1>Categories</h1>
 
                 {this.props.categories.map(el => {

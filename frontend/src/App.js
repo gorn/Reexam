@@ -76,7 +76,7 @@ class App extends Component{
         />
     };
 
-    makeJob (title, category, location, description)  {
+    postJob (title, category, location, description)  {
         fetch(`http://localhost:5000/api/jobs/albi/post`, {
             method: 'post',
             headers:{'Content-Type': 'application/json'},
@@ -120,7 +120,7 @@ class App extends Component{
                                    <Categories {...props}
                                          jobs={this.state.jobs}
                                          category={props.match.params.category}
-                                         areas={this.state.areas}
+                                         areas={this.state.locations}
                                    />
                                }
                         />
@@ -139,7 +139,6 @@ class App extends Component{
                                    this.renderJob(props, props.match.params.id)
                                }
                         />
-                        <Route exact path='/post' component={Post}/>
                         <Route exact path={'/login'}
                                render={(props) =>
                                    <div>
@@ -147,12 +146,15 @@ class App extends Component{
                                    </div>
                                }
                         />
-                        {/*<Route exact path={'/post'}*/}
-                               {/*render={(props) =>*/}
-                                   {/*<Post {...props}*/}
-                                         {/*header={'Post job add'} postDataToDB={this.postDataToDB} form={this.postDataToDB}/>*/}
-                               {/*}*/}
-                        {/*/>*/}
+                        <Route exact path={'/post'}
+                               render={(props) =>
+                                   <Post {...props}
+                                         postJob={this.postJob}
+                                         categories={this.state.categories}
+                                         locations={this.state.locations}
+                                   />
+                               }
+                        />
 
                     </Switch>
                 </Router>

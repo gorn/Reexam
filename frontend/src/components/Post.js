@@ -8,7 +8,7 @@ export class Post extends Component {
 
         const job = formObject.object(e);
 
-        this.props.makeJob(
+        this.props.postJob(
             job.title,
             job.category,
             job.location,
@@ -17,9 +17,9 @@ export class Post extends Component {
     )
     };
 
-    renderDatList (datList) {
-        return datList.map(dat => (
-            <option key={dat._id} value={dat._id}>{dat.name}</option>
+    renderList (list) {
+        return list.map(el => (
+            <option key={el._id} value={el._id}>{el.name}</option>
         ))
     };
 
@@ -27,8 +27,10 @@ export class Post extends Component {
         let categories = this.props.categories;
         let locations = this.props.locations;
 
+        console.log(this.props);
+
         if(!categories || !locations){
-            return <p>Waiting for the categories and locations</p>
+            return <p>Loading...</p>
         }
 
         return (
@@ -39,10 +41,10 @@ export class Post extends Component {
                     <input type="text" name="company" placeholder="Add a company" required/><br></br>
                     <textarea type="text" name="description" placeholder="Add a description" required/><br></br>
                     <select name="location" required>
-                        {this.renderDatList(locations)}
+                        {this.renderList(locations)}
                     </select>
                     <select name="category" required>
-                        {this.renderDatList(categories)}
+                        {this.renderList(categories)}
                     </select>
                     <button type="submit">Add a job post</button>
                 </form>
