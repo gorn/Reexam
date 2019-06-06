@@ -1,63 +1,54 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react'
+import formObject from './objects';
+import {Link} from "react-router-dom";
 
-class Post extends Component{
-    constructor(){
-        super();
-        this.state = {
-            title: null,
-            company: null,
-            description: null,
-            location: null,
-            category: null
-        }
-    }
-    componentDidMount() {
-        fetch('https://localhost:5000/api/jobs/post')
-            .then(res => res.text())
-            .then(res=> this.setState({message: res}))
-    }
+export class Post extends Component {
+    handleSubmit = (e) => {
+        e.preventDefault();
 
+        const job = formObject.object(e);
+
+        this.props.makeJob(
+            job.title,
+            job.category,
+            job.location,
+            job.company,
+            job.description,
+    )
+    };
+
+    renderDatList (datList) {
+        return datList.map(dat => (
+            <option key={dat._id} value={dat._id}>{dat.name}</option>
+        ))
+    };
 
     render() {
-        return(
+        let categories = this.props.categories;
+        let locations = this.props.locations;
+
+        if(!categories || !locations){
+            return <p>Waiting for the categories and locations</p>
+        }
+
+        return (
             <div>
-                <h1>Post job add</h1>
-                <p>{this.state.message}</p>
-                <input
-                type="text"
-                onChange={e => this.setState({ title: e.target.value })}
-                placeholder="Title of the job"
-                style={{ width: "200px" }}
-                />
-                <input
-                    type="text"
-                    onChange={e => this.setState({ company: e.target.value })}
-                    placeholder="Name of your company"
-                    style={{ width: "200px" }}
-                />
-                <input
-                type="text"
-                onChange={e => this.setState({ description: e.target.value })}
-                placeholder="Description of the job"
-                style={{ width: "200px" }}
-                />
-                <input
-                    type="text"
-                    onChange={e => this.setState({ location: e.target.value })}
-                    placeholder="Location of the job"
-                    style={{ width: "200px" }}
-                />
-                <input
-                    type="text"
-                    onChange={e => this.setState({ category: e.target.value })}
-                    placeholder="Job category"
-                    style={{ width: "200px" }}
-                />
-                <button onClick={() => this.props.postDataToDB(this.state.title,this.state.company, this.state.description, this.state.location, this.state.category )}>
-                    Submit
-                </button>
+                <Link to ={"/"}> <p>Home</p></Link><br></br>
+                <form onSubmit={this.handleSubmit}>
+                    <input type="text" name="title" placeholder="Add a title" required/><br></br>
+                    <input type="text" name="company" placeholder="Add a company" required/><br></br>
+                    <textarea type="text" name="description" placeholder="Add a description" required/><br></br>
+                    <select name="location" required>
+                        {this.renderDatList(locations)}
+                    </select>
+                    <select name="category" required>
+                        {this.renderDatList(categories)}
+                    </select>
+                    <button type="submit">Add a job post</button>
+                </form>
             </div>
         )
     }
 }
-export default Post;
+
+export default Post

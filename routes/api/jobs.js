@@ -13,15 +13,6 @@ router.get('/', (req, res) =>{
 });
 
 
-// router.get('/:location/:category', (req, res) =>{
-//     Albi.find({location: req.params.location, category: req.params.category},(err, albi)=>{
-//         if(err){
-//             res.send(err);
-//         }
-//         res.json({success: true, data: albi});
-//     });
-// });
-
 router.post('/albi/post', (req, res) => {
     const newAlbi = req.body;
     const albi = new Albi({

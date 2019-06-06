@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
-// import MainJobsView from './Jobs/MainJobsView';
-// import Login from './User/LoginView';
-// import Post from './Jobs/PostJobView';
+import Post from './components/Post';
 import Categories from "./components/Categories";
-// import LocationView from "./Jobs/LocationView";
-// import IndividualJobView from "./Jobs/IndividualJobView";
+import Locations from "./components/Locations";
+import JobPosts from "./components/JobPosts";
+import Job from "./components/Job";
+import Login from "./components/Login";
 
 
 class App extends Component{
@@ -17,96 +17,81 @@ class App extends Component{
             jobs: [],
             locations: []
         };
-
-        // this.postDataToDB = this.postDataToDB.bind(this);
     }
 
-    categoryStorage(){
+    keepCategories(){
         let categories = this.state.categories;
         localStorage.setItem("categories", JSON.stringify(categories))
     };
 
-    // jobsStorage(){
-    //     let jobs = this.state.jobs;
-    //     localStorage.setItem("jobs", JSON.stringify(jobs))
-    // };
+    keepJobs(){
+        let jobs = this.state.jobs;
+        localStorage.setItem("jobs", JSON.stringify(jobs))
+    };
 
-    // locationStorage(){
-    //     let locations = this.state.locations;
-    //     localStorage.setItem("locations", JSON.stringify(locations))
-    // };
+    keepLocations(){
+        let locations = this.state.locations;
+        localStorage.setItem("locations", JSON.stringify(locations))
+    };
 
     componentDidMount() {
         //await data.
-        // this.getJobsFromDb();
-        this.getCategoriesFromDb();
-        // this.getLocationsFromDb();
+        this.getJobs();
+        this.getCategories();
+        this.getLocations();
     }
-    // never let a process live forever
-    // always kill a process every time we are done using it
-    // componentWillUnmount() {
-    //     if (this.state.intervalIsSet) {
-    //         clearInterval(this.state.intervalIsSet);
-    //         this.setState({ intervalIsSet: null });
-    //     }
-    // }
 
-    // async getJobsFromDb () {
-    //     const response = await fetch(
-    //         `http://localhost:5000/api/jobs`
-    //     );
-    //     const json = await response.json();
-    //     this.setState({ jobs: json });
-    // }
+    async getJobs () {
+        const response = await fetch(
+            `http://localhost:5000/api/jobs`
+        );
+        const json = await response.json();
+        this.setState({ jobs: json });
+        this.keepJobs();
+    }
 
-    getCategoriesFromDb = () => {
+    getCategories () {
         fetch("http://localhost:5000/api/categories")
              .then(response => response.json())
-            //// jen pro debug
-            //  .then(response => console.log(response.categories) ) 
              .then(res => {this.setState({ categories: res.categories }); } );
-        this.categoryStorage();
-        ;
+        this.keepCategories();
     };
-    // getLocationsFromDb = () => {
-    //     fetch("http://localhost:5000/api/locations")
-    //         .then(locations => locations.json())
-    //         .then(res => this.setState({ locations: res.data }));
-    //     this.locationStorage()
-    // };
+    getLocations = () => {
+        fetch("http://localhost:5000/api/locations")
+            .then(locations => locations.json())
+            .then(res => this.setState({ locations: res.data }));
+        this.keepLocations()
+    };
 
-    // getJobsWithCategoryAndLocation = (category, location) => {
-    //     fetch("http://localhost:5000app.route/api/"+category+"/"+location)
-    //         .then(jobs => jobs.json())
-    //         .then(res => this.setState({ jobs: res.data }));
-    //     this.jobsStorage()
-    // };
-    // getJobById = (id) => {
-    //     let jobFound = this.state.jobs.find(elm => elm._id === id);
-    //     return jobFound;
-    // };
-    //
-    // renderJob = (props, id) => {
-    //     let job = this.getJobById(id);
-    //     return <IndividualJobView {...props}
-    //                 job={job}
-    //     />
-    // };
+    getJobId (id)  {
+        let jobPosition = this.state.jobs.find(el => el._id === id);
+        return jobPosition;
+    };
 
-    // postDataToDB(title, company, description, location, category){
-    //     fetch(`http://localhost:5000/api/jobs/`, {
-    //         method:'post',
-    //         body: JSON.stringify({
-    //             "title": title,
-    //             "company": company,
-    //             "description": description,
-    //             "location": location,
-    //             "category": category
-    //         }),
-    //         headers: new Headers({ "Content-Type": "application/json" }) // add headers
-    //
-    //     })
-    // }
+    renderJob = (props, id) => {
+        let job = this.getJobId(id);
+        return <Job {...props}
+                    job={job}
+                    jobs={this.state.jobs}
+        />
+    };
+
+    makeJob (title, category, location, description)  {
+        fetch(`http://localhost:5000/api/jobs/albi/post`, {
+            method: 'post',
+            headers:{'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                title: title,
+                category: category,
+                location: location,
+                description: description
+            })
+        })
+            .then(json => {
+                console.log(json);
+                this.getJobs();
+            })
+    };
 
     render() {
         return (
@@ -121,47 +106,52 @@ class App extends Component{
                                    </div>
                                }
                         />
-                        {/*<Route exact path={'/jobs/:category'}*/}
-                               {/*render={(props) =>*/}
-                                   {/*<LocationView {...props}*/}
-                                                 {/*jobs={this.state.jobs}*/}
-                                                 {/*category={props.match.params.category}*/}
-                                                 {/*locations={this.state.locations}/>*/}
-                               {/*}*/}
-                        {/*/>*/}
+                        <Route exact path={'/jobs/:category'}
+                               render={(props) =>
+                                   <Locations {...props}
+                                                 jobs={this.state.jobs}
+                                                 category={props.match.params.category}
+                                                 locations={this.state.locations}/>
+                               }
+                        />
 
-                        {/*<Route exact path={'/jobs/'}*/}
-                        {/*       render={(props) =>*/}
-                        {/*           <CategoriesView {...props}*/}
-                        {/*                 jobs={this.state.jobs}*/}
-                        {/*                 category={props.match.params.category}*/}
-                        {/*                 areas={this.state.areas}*/}
-                        {/*           />*/}
-                        {/*       }*/}
-                        {/*/>*/}
+                        <Route exact path={'/jobs/'}
+                               render={(props) =>
+                                   <Categories {...props}
+                                         jobs={this.state.jobs}
+                                         category={props.match.params.category}
+                                         areas={this.state.areas}
+                                   />
+                               }
+                        />
 
-                        {/*<Route exact path={'/jobs/:category/:location'}*/}
-                               {/*render={(props) =>*/}
-                                   {/*<MainJobsView {...props}*/}
-                                       {/*// jobsCL={this.getJobsWithCategoryAndLocation(props.match.params.category, props.match.params.location )}*/}
-                                                 {/*jobs={this.state.jobs}*/}
-                                                 {/*category={props.match.params.category}*/}
-                                                 {/*location={props.match.params.location}*/}
-                                   {/*/>*/}
-                               {/*}*/}
-                        {/*/>*/}
-                        {/*<Route exact path={'/job/:id'}*/}
-                        {/*       render={(props) =>*/}
-                        {/*           this.renderJob(props, props.match.params.id)*/}
-                        {/*       }*/}
-                        {/*/>*/}
-                        {/*<Route exact path='/login' component={Login}/>*/}
-                        {/*<Route exact path='/post' component={Post}/>*/}
+                        <Route exact path={'/jobs/:category/:location'}
+                               render={(props) =>
+                                   <JobPosts {...props}
+                                                 jobs={this.state.jobs}
+                                                 category={props.match.params.category}
+                                                 location={props.match.params.location}
+                                   />
+                               }
+                        />
+                        <Route exact path={'/job/:id'}
+                               render={(props) =>
+                                   this.renderJob(props, props.match.params.id)
+                               }
+                        />
+                        <Route exact path='/post' component={Post}/>
+                        <Route exact path={'/login'}
+                               render={(props) =>
+                                   <div>
+                                       <Login {...props}/>
+                                   </div>
+                               }
+                        />
                         {/*<Route exact path={'/post'}*/}
-                        {/*       render={(props) =>*/}
-                        {/*           <Post {...props}*/}
-                        {/*                 header={'Post job add'} postDataToDB={this.postDataToDB} form={this.postDataToDB}/>*/}
-                        {/*       }*/}
+                               {/*render={(props) =>*/}
+                                   {/*<Post {...props}*/}
+                                         {/*header={'Post job add'} postDataToDB={this.postDataToDB} form={this.postDataToDB}/>*/}
+                               {/*}*/}
                         {/*/>*/}
 
                     </Switch>
@@ -170,8 +160,6 @@ class App extends Component{
 
         );
     }
-
-
 }
 
 export default App;
