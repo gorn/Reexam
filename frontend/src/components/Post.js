@@ -10,9 +10,9 @@ export class Post extends Component {
 
         this.props.postJob(
             job.title,
+            job.company,
             job.category,
             job.location,
-            job.company,
             job.description,
     )
     };
@@ -25,7 +25,7 @@ export class Post extends Component {
 
     render() {
         let categories = this.props.categories;
-        let locations = this.props.locations;
+        let locations = this.props.areas;
 
         console.log(this.props);
 
