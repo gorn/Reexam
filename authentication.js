@@ -1,16 +1,23 @@
 const jwt = require('jsonwebtoken');
 const config = require('config');
+const secret = config.get('jwtSecret');
 
 module.exports = function(req, res, next) {
-
-    const token = req.header('x-auth-token');
-
+    const token =
+        req.body.token ||
+        req.query.token ||
+        req.headers['x-access-token'] ||
+        req.cookies.token;
     if (!token) {
-        return res.status(401).json({ msg: 'Authorization denied' });
-    }else {
-        const decoded = jwt.verify(token, config.get('jwtSecret'));
-
-        req.user = decoded.user;
-        next();
+        res.status(401).send('Unauthorized: No token provided');
+    } else {
+        jwt.verify(token, secret, function(err, decoded) {
+            if (err) {
+                res.status(401).send('Unauthorized: Invalid token');
+            } else {
+                req.userName = decoded.userName;
+                next();
+            }
+        });
     }
-};
+}

@@ -26,7 +26,7 @@ class Login extends Component{
       }).then(res => {
           if (res.status === 200) {
               console.log('hello world');
-              this.props.history.push('/');
+              this.props.history.push('/loginSuccess');
 
           }else{
               const error = new Error(res.error);
@@ -44,7 +44,7 @@ class Login extends Component{
                     <input
                         type="name"
                         name="userName"
-                        // value={this.state.userName}
+                        value={this.state.userName}
                         onChange={this.handleInputChange}
                         placeholder="Username"
                         required

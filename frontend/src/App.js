@@ -6,6 +6,8 @@ import Locations from "./components/Locations";
 import JobPosts from "./components/JobPosts";
 import Job from "./components/Job";
 import Login from "./components/Login";
+import AuthServise from "./components/AuthServise";
+import SuccessLogin from "./components/LoginSuccess";
 
 
 class App extends Component{
@@ -15,7 +17,7 @@ class App extends Component{
         this.state = {
             categories: [],
             jobs: [],
-            locations: []
+            areas: []
         };
     }
 
@@ -30,8 +32,8 @@ class App extends Component{
     };
 
     keepLocations(){
-        let locations = this.state.locations;
-        localStorage.setItem("locations", JSON.stringify(locations))
+        let locations = this.state.areas;
+        localStorage.setItem("areas", JSON.stringify(locations))
     };
 
     componentDidMount() {
@@ -59,7 +61,7 @@ class App extends Component{
     getLocations = () => {
         fetch("http://localhost:5000/api/locations")
             .then(locations => locations.json())
-            .then(res => this.setState({ locations: res.data }));
+            .then(res => this.setState({ areas: res.data }));
         this.keepLocations()
     };
 
@@ -76,20 +78,21 @@ class App extends Component{
         />
     };
 
-    postJob (title, category, location, description)  {
+    postJob (title,company, category, area, description)  {
         fetch(`http://localhost:5000/api/jobs/albi/post`, {
             method: 'post',
             headers:{'Content-Type': 'application/json'},
             body: JSON.stringify({
                 title: title,
+                company: company,
                 category: category,
-                location: location,
+                area: area,
                 description: description
             })
         })
             .then(json => {
                 console.log(json);
-                this.getJobs();
+
             })
     };
 
@@ -111,7 +114,7 @@ class App extends Component{
                                    <Locations {...props}
                                                  jobs={this.state.jobs}
                                                  category={props.match.params.category}
-                                                 locations={this.state.locations}/>
+                                                 areas={this.state.areas}/>
                                }
                         />
 
@@ -120,17 +123,17 @@ class App extends Component{
                                    <Categories {...props}
                                          jobs={this.state.jobs}
                                          category={props.match.params.category}
-                                         areas={this.state.locations}
+                                         area={this.state.area}
                                    />
                                }
                         />
 
-                        <Route exact path={'/jobs/:category/:location'}
+                        <Route exact path={'/jobs/:category/:area'}
                                render={(props) =>
                                    <JobPosts {...props}
                                                  jobs={this.state.jobs}
                                                  category={props.match.params.category}
-                                                 location={props.match.params.location}
+                                                 area={props.match.params.area}
                                    />
                                }
                         />
@@ -146,12 +149,13 @@ class App extends Component{
                                    </div>
                                }
                         />
+                        <Route path="/loginSuccess" component={AuthServise(SuccessLogin)} />
                         <Route exact path={'/post'}
                                render={(props) =>
                                    <Post {...props}
                                          postJob={this.postJob}
                                          categories={this.state.categories}
-                                         locations={this.state.locations}
+                                         areas={this.state.areas}
                                    />
                                }
                         />

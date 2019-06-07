@@ -46,7 +46,7 @@ export class Post extends Component {
                     <select name="category" required>
                         {this.renderList(categories)}
                     </select>
-                    <button type="submit">Add a job post</button>
+                    <button type="submit">Submit</button>
                 </form>
             </div>
         )

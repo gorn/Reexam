@@ -8,15 +8,14 @@ class Locations extends Component{
     // };
 
     render() {
-
-        let locations = this.props.locations;
-
+        console.log(this.props.areas);
         return(
             <div>
                 <Link to ={"/login"}> <p>Login</p></Link>
+
                 <h1>Locations</h1>
 
-                {this.props.locations.map(el => {
+                {this.props.areas.map(el => {
                     return <Link key={el._id} to={`/jobs/${this.props.category}/${el.namePath}`}><p>{el.name} <br></br>
                     </p></Link>
                 })}

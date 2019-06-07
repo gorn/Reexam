@@ -4,7 +4,8 @@ import {Link} from "react-router-dom";
 class Categories extends Component{
 
         render() {
-        return(
+
+            return(
             <div>
                 <Link to ={"/login"}> <p>Login</p></Link>
                 <Link to={"/post"}><p>Post</p></Link>

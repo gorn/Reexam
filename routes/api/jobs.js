@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const Albi = require('../../schemas/Jobs');
+const authentication = require('../../authentication');
 
 router.get('/', (req, res) =>{
     Albi.find({})
