@@ -13,7 +13,7 @@ router.get('/', (req, res) =>{
             .catch(err => res.send(err))
 });
 
-router.post('/albi/post', (req, res) => {
+router.post('/albi/post',authentication, (req, res) => {
     const newAlbi = req.body;
     const albi = new Albi({
         title: newAlbi.title,
