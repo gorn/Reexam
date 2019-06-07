@@ -11,9 +11,9 @@ export class Post extends Component {
         this.props.postJob(
             job.title,
             job.category,
+            job.description,
             job.location,
             job.company,
-            job.description,
     )
     };
 
