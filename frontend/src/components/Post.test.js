@@ -11,12 +11,3 @@ describe('Headers there', ()=>{
 });
 
 afterEach(cleanup);
-
-describe('Post button clicked', ()=> {
-    it('should recognize the click by the text', ()=> {
-        const {getText} = render(<BrowserRouter><Post name =Submit/></BrowserRouter>);
-        const text = getText('Submit');
-        fireEvent.click(text);
-    })
-});
-afterEach(cleanup);

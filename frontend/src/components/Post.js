@@ -25,7 +25,7 @@ export class Post extends Component {
 
     render() {
         let categories = this.props.categories;
-        let locations = this.props.locations;
+        let locations = this.props.areas;
 
         console.log(this.props);
 
