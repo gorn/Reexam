@@ -2,7 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const cookieParser = require('cookie-parser');
-
+const checkJwt = require('express-jwt');
+const config = require('config');
 // const cors = require('cors');
 //
 // app.use(cors);
@@ -13,6 +14,18 @@ app.all('/*', function(req, res, next) {
 
     next();
 });
+// app.use(
+//     checkJwt({ secret: config.get('jwtSecret') }).unless({ path : openPaths})
+// );
+
+// let openPaths = [
+//     '/api/users/authenticate',
+//     '/api/jobs',
+//     '/api/categories',
+//     '/api/locations',
+//     '/job/*',
+//     '/jobs/*'
+// ];
 const port = process.env.PORT|| 5000;
 app.use(cookieParser());
 app.use(express.json());

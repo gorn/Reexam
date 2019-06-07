@@ -13,7 +13,6 @@ router.get('/', (req, res) =>{
             .catch(err => res.send(err))
 });
 
-
 router.post('/albi/post', (req, res) => {
     const newAlbi = req.body;
     const albi = new Albi({

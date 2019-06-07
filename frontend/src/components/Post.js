@@ -25,11 +25,11 @@ export class Post extends Component {
 
     render() {
         let categories = this.props.categories;
-        let locations = this.props.areas;
+        let areas = this.props.areas;
 
         console.log(this.props);
 
-        if(!categories || !locations){
+        if(!categories || !areas){
             return <p>Loading...</p>
         }
 
@@ -41,12 +41,12 @@ export class Post extends Component {
                     <input type="text" name="company" placeholder="Add a company" required/><br></br>
                     <textarea type="text" name="description" placeholder="Add a description" required/><br></br>
                     <select name="location" required>
-                        {this.renderList(locations)}
+                        {this.renderList(areas)}
                     </select>
                     <select name="category" required>
                         {this.renderList(categories)}
                     </select>
-                    <button type="submit">Submit</button>
+                    <button type="submit">Add a job post</button>
                 </form>
             </div>
         )
