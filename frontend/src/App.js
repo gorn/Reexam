@@ -149,7 +149,7 @@ class App extends Component{
                                    </div>
                                }
                         />
-                        <Route path="/loginSuccess" component={AuthServise(SuccessLogin)} />
+                        {/*<Route path="/loginSuccess" component={AuthServise(SuccessLogin)} />*/}
                         <Route exact path={'/post'}
                                render={(props) =>
                                    <Post {...props}
