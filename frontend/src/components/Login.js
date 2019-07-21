@@ -17,7 +17,7 @@ class Login extends Component{
     };
     onSubmit = event => {
       event.preventDefault();
-      fetch('http://localhost:5000/api/users/authenticate', {
+      fetch('https://jobappexam.herokuapp.com/api/users/authenticate', {
           method: 'POST',
           body: JSON.stringify(this.state),
           headers: {

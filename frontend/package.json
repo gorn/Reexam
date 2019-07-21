@@ -24,7 +24,6 @@
     "postinstall": "react-scripts build"
   },
   "homepage": "https://jobappexam.herokuapp.com",
-  "proxy": "https://jobappexam.herokuapp.com/api/",
   "eslintConfig": {
     "extends": "react-app"
   },

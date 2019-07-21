@@ -10,7 +10,7 @@ export default function AuthServise(ComponentToProtect) {
             };
         }
          componentDidMount() {
-             fetch('http://localhost:5000/api/users/checkToken')
+             fetch('https://jobappexam.herokuapp.com/api/users/checkToken')
                 .then(res => {
                     if (res.status === 200) {
                         this.setState({ loading: false });

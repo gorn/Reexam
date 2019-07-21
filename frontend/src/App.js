@@ -45,7 +45,7 @@ class App extends Component{
 
     async getJobs () {
         const response = await fetch(
-            `/jobs`
+            `https://jobappexam.herokuapp.com/api/jobs`
         );
         const json = await response.json();
         this.setState({ jobs: json });
@@ -53,13 +53,13 @@ class App extends Component{
     }
 
     getCategories () {
-        fetch("/categories")
+        fetch(`https://jobappexam.herokuapp.com/api/categories`)
              .then(response => response.json())
              .then(res => {this.setState({ categories: res.categories }); } );
         this.keepCategories();
     };
     getLocations = () => {
-        fetch("/locations")
+        fetch(`https://jobappexam.herokuapp.com/api/locations`)
             .then(locations => locations.json())
             .then(res => this.setState({ areas: res.data }));
         this.keepLocations()
@@ -79,7 +79,7 @@ class App extends Component{
     };
 
     postJob (title,company, category, area, description)  {
-        fetch(`/jobs/albi/post`, {
+        fetch(`https://jobappexam.herokuapp.com/api/jobs/albi/post`, {
             method: 'post',
             headers:{'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -109,7 +109,7 @@ class App extends Component{
                                    </div>
                                }
                         />
-                        <Route exact path={'/jobs/:category'}
+                        <Route exact path={`https://jobappexam.herokuapp.com/api/jobs/:category`}
                                render={(props) =>
                                    <Locations {...props}
                                                  jobs={this.state.jobs}
@@ -118,7 +118,7 @@ class App extends Component{
                                }
                         />
 
-                        <Route exact path={'/jobs/'}
+                        <Route exact path={`https://jobappexam.herokuapp.com/api/jobs/`}
                                render={(props) =>
                                    <Categories {...props}
                                          jobs={this.state.jobs}
@@ -128,7 +128,7 @@ class App extends Component{
                                }
                         />
 
-                        <Route exact path={'/jobs/:category/:area'}
+                        <Route exact path={`https://jobappexam.herokuapp.com/api/jobs/:category/:area`}
                                render={(props) =>
                                    <JobPosts {...props}
                                                  jobs={this.state.jobs}
@@ -137,12 +137,12 @@ class App extends Component{
                                    />
                                }
                         />
-                        <Route exact path={'/job/:id'}
+                        <Route exact path={'https://jobappexam.herokuapp.com/api/job/:id'}
                                render={(props) =>
                                    this.renderJob(props, props.match.params.id)
                                }
                         />
-                        <Route exact path={'/login'}
+                        <Route exact path={'https://jobappexam.herokuapp.com/api/login'}
                                render={(props) =>
                                    <div>
                                        <Login {...props}/>
@@ -150,7 +150,7 @@ class App extends Component{
                                }
                         />
                         {/*<Route path="/loginSuccess" component={AuthServise(SuccessLogin)} />*/}
-                        <Route exact path={'/post'}
+                        <Route exact path={'https://jobappexam.herokuapp.com/api/post'}
                                render={(props) =>
                                    <Post {...props}
                                          postJob={this.postJob}
