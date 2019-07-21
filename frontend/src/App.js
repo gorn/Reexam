@@ -109,7 +109,7 @@ class App extends Component{
                                    </div>
                                }
                         />
-                        <Route exact path={`https://jobappexam.herokuapp.com/api/jobs/:category`}
+                        <Route exact path={`/jobs/:category`}
                                render={(props) =>
                                    <Locations {...props}
                                                  jobs={this.state.jobs}
@@ -118,7 +118,7 @@ class App extends Component{
                                }
                         />
 
-                        <Route exact path={`https://jobappexam.herokuapp.com/api/jobs/`}
+                        <Route exact path={`/jobs/`}
                                render={(props) =>
                                    <Categories {...props}
                                          jobs={this.state.jobs}
@@ -128,7 +128,7 @@ class App extends Component{
                                }
                         />
 
-                        <Route exact path={`https://jobappexam.herokuapp.com/api/jobs/:category/:area`}
+                        <Route exact path={`/jobs/:category/:area`}
                                render={(props) =>
                                    <JobPosts {...props}
                                                  jobs={this.state.jobs}
@@ -137,12 +137,12 @@ class App extends Component{
                                    />
                                }
                         />
-                        <Route exact path={'https://jobappexam.herokuapp.com/api/job/:id'}
+                        <Route exact path={'/job/:id'}
                                render={(props) =>
                                    this.renderJob(props, props.match.params.id)
                                }
                         />
-                        <Route exact path={'https://jobappexam.herokuapp.com/api/login'}
+                        <Route exact path={'/login'}
                                render={(props) =>
                                    <div>
                                        <Login {...props}/>
@@ -150,7 +150,7 @@ class App extends Component{
                                }
                         />
                         {/*<Route path="/loginSuccess" component={AuthServise(SuccessLogin)} />*/}
-                        <Route exact path={'https://jobappexam.herokuapp.com/api/post'}
+                        <Route exact path={'/post'}
                                render={(props) =>
                                    <Post {...props}
                                          postJob={this.postJob}
