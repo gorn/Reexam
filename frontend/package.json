@@ -23,8 +23,8 @@
     "eject": "react-scripts eject",
     "postinstall": "react-scripts build"
   },
-  "homepage": "https://frameworksexamagustin.herokuapp.com/",
-  "proxy": "https://frameworksexamagustin.herokuapp.com/",
+  "homepage": "https://jobappexam.herokuapp.com/",
+  "proxy": "https://jobappexam.herokuapp.com/",
   "eslintConfig": {
     "extends": "react-app"
   },
