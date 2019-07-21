@@ -45,7 +45,7 @@ class App extends Component{
 
     async getJobs () {
         const response = await fetch(
-            `http://localhost:5000/api/jobs`
+            `/jobs`
         );
         const json = await response.json();
         this.setState({ jobs: json });
@@ -53,13 +53,13 @@ class App extends Component{
     }
 
     getCategories () {
-        fetch("http://localhost:5000/api/categories")
+        fetch("/categories")
              .then(response => response.json())
              .then(res => {this.setState({ categories: res.categories }); } );
         this.keepCategories();
     };
     getLocations = () => {
-        fetch("http://localhost:5000/api/locations")
+        fetch("/locations")
             .then(locations => locations.json())
             .then(res => this.setState({ areas: res.data }));
         this.keepLocations()
@@ -79,7 +79,7 @@ class App extends Component{
     };
 
     postJob (title,company, category, area, description)  {
-        fetch(`http://localhost:5000/api/jobs/albi/post`, {
+        fetch(`/jobs/albi/post`, {
             method: 'post',
             headers:{'Content-Type': 'application/json'},
             body: JSON.stringify({

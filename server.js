@@ -42,12 +42,10 @@ app.use('/api/jobs', require('./routes/api/jobs'));
 app.use('/api/locations', require('./routes/api/locations'));
 app.use('/api/categories', require('./routes/api/categories'));
 
-if(process.env.NODE_ENV === 'production'){
-    //set static folder
-    app.use(express.static('client/build'));
-    app.get('/', (req, res)=>{
-        res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
-    });
-}
+app.use(express.static(path.join(__dirname, '/frontend/build')));
+app.get('/api', function (req, res) {
+    const index = path.join(__dirname, '/frontend/build', 'index.html');
+    res.sendFile(index);
+});
 
 app.listen(port, () => console.log(`Exam API running on port ${port}!`));
