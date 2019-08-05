@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Post from './components/Post';
-import Categories from "./components/Categories";
+import TvChannels from "./components/TvChannels";
 import Locations from "./components/Locations";
 import JobPosts from "./components/JobPosts";
 import Job from "./components/Job";
@@ -15,86 +15,57 @@ class App extends Component{
         super(props);
 
         this.state = {
-            categories: [],
-            jobs: [],
-            areas: []
+            tvchannels: [],
+            programs: [],
+            user: {}
         };
     }
 
-    keepCategories(){
-        let categories = this.state.categories;
-        localStorage.setItem("categories", JSON.stringify(categories))
-    };
+    channelsStore(){
+        let tvchannels = this.state.tvchannels;
+        localStorage.setItem("tvchannels", JSON.stringify(tvchannels))
+    }
 
-    keepJobs(){
-        let jobs = this.state.jobs;
-        localStorage.setItem("jobs", JSON.stringify(jobs))
-    };
-
-    keepLocations(){
-        let locations = this.state.areas;
-        localStorage.setItem("areas", JSON.stringify(locations))
-    };
+    programStore(){
+        let programs = this.state.programs;
+        localStorage.setItem("programs", JSON.stringify(programs))
+    }
 
     componentDidMount() {
         //await data.
-        this.getJobs();
-        this.getCategories();
-        this.getLocations();
+        this.getPrograms();
+        this.getTvChannels();
     }
 
-    async getJobs () {
+    async getPrograms () {
         const response = await fetch(
-            `https://jobappexam.herokuapp.com/api/jobs`
+            `https://jobappexam.herokuapp.com/api/programs`
         );
         const json = await response.json();
         this.setState({ jobs: json });
-        this.keepJobs();
+        this.programStore();
     }
 
-    getCategories () {
-        fetch(`https://jobappexam.herokuapp.com/api/categories`)
+    getTvChannels () {
+        fetch(`https://jobappexam.herokuapp.com/api/tvchannels`)
              .then(response => response.json())
-             .then(res => {this.setState({ categories: res.categories }); } );
-        this.keepCategories();
-    };
-    getLocations = () => {
-        fetch(`https://jobappexam.herokuapp.com/api/locations`)
-            .then(locations => locations.json())
-            .then(res => this.setState({ areas: res.data }));
-        this.keepLocations()
+             .then(res => {this.setState({ tvchannels: res.tvchannels }); } );
+        this.channelsStore();
     };
 
-    getJobId (id)  {
-        let jobPosition = this.state.jobs.find(el => el._id === id);
-        return jobPosition;
+    getProgramId (id)  {
+        let programPosition = this.state.programs.find(el => el._id === id);
+        return programPosition;
     };
 
-    renderJob = (props, id) => {
-        let job = this.getJobId(id);
-        return <Job {...props}
-                    job={job}
-                    jobs={this.state.jobs}
+    renderProgram = (props, id) => {
+        let program = this.getProgramId(id);
+        return <Program {...props}
+                    program={program}
+                    programs={this.state.programs}
         />
     };
 
-    postJob (title,company, category, area, description)  {
-        fetch(`https://jobappexam.herokuapp.com/api/jobs/albi/post`, {
-            method: 'post',
-            headers:{'Content-Type': 'application/json'},
-            body: JSON.stringify({
-                title: title,
-                company: company,
-                category: category,
-                area: area,
-                description: description
-            })
-        })
-            .then(json => {
-                console.log(json);
-
-            })
-    };
 
     render() {
         return (
@@ -104,42 +75,33 @@ class App extends Component{
                         <Route exact path={'/'}
                                render={(props) =>
                                    <div>
-                                       <Categories {...props} jobs={this.state.jobs}
-                                                       categories={this.state.categories}/>
+                                       <TvChannels {...props} programs={this.state.programs}
+                                                       tvchannels={this.state.tvchannels}/>
                                    </div>
-                               }
-                        />
-                        <Route exact path={`/jobs/:category`}
-                               render={(props) =>
-                                   <Locations {...props}
-                                                 jobs={this.state.jobs}
-                                                 category={props.match.params.category}
-                                                 areas={this.state.areas}/>
                                }
                         />
 
                         <Route exact path={`/jobs/`}
                                render={(props) =>
-                                   <Categories {...props}
-                                         jobs={this.state.jobs}
-                                         category={props.match.params.category}
-                                         area={this.state.area}
+                                   <TvChannels {...props}
+                                               jobs={this.state.jobs}
+                                               category={props.match.params.category}
+                                               area={this.state.area}
                                    />
                                }
                         />
 
-                        <Route exact path={`/jobs/:category/:area`}
+                        <Route exact path={`/programs/:tvchannels`}
                                render={(props) =>
                                    <JobPosts {...props}
                                                  jobs={this.state.jobs}
                                                  category={props.match.params.category}
-                                                 area={props.match.params.area}
                                    />
                                }
                         />
-                        <Route exact path={'/job/:id'}
+                        <Route exact path={'/program/:id'}
                                render={(props) =>
-                                   this.renderJob(props, props.match.params.id)
+                                   this.renderProgram(props, props.match.params.id)
                                }
                         />
                         <Route exact path={'/login'}
@@ -150,15 +112,14 @@ class App extends Component{
                                }
                         />
                         {/*<Route path="/loginSuccess" component={AuthServise(SuccessLogin)} />*/}
-                        <Route exact path={'/post'}
-                               render={(props) =>
-                                   <Post {...props}
-                                         postJob={this.postJob}
-                                         categories={this.state.categories}
-                                         areas={this.state.areas}
-                                   />
-                               }
-                        />
+                        {/*<Route exact path={'/post'}*/}
+                               {/*render={(props) =>*/}
+                                   {/*<Post {...props}*/}
+                                         {/*categories={this.state.categories}*/}
+                                         {/*areas={this.state.areas}*/}
+                                   {/*/>*/}
+                               {/*}*/}
+                        {/*/>*/}
 
                     </Switch>
                 </Router>
