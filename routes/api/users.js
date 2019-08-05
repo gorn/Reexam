@@ -73,14 +73,16 @@ router.put('/favorite/:id', (req, res) => {
 });
 
 router.put('/favorite/delete/:id', async (req, res) => {
-    const { id } = req.params;
-    const { favorite } = req.body;
+    // console.log (req);
+    // console.log (req.query);
+    var id = req.params.id;
+    var favorite = req.query.favorite;
+    // console.log ("PARAMS:\n Favorite: "+favorite+', UserID: '+id)
     try {
         const updatedUser = await User.findByIdAndUpdate(id,
-            { $pull: { favorites: favorite } },
+            { $pull: { favorite: favorite } },
             { new: true },
         );
-        console.log('Id:' + id + ', Favorite: '+favorite );
         res.send(updatedUser);
     } catch (e) {
         console.error(e);
