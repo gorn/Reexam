@@ -38,9 +38,8 @@ mongoose.connect('mongodb+srv://albi123:albi123@cluster0-ihrbv.mongodb.net/test?
 });
 
 app.use('/api/users', require('./routes/api/users'));
-app.use('/api/jobs', require('./routes/api/jobs'));
-app.use('/api/locations', require('./routes/api/locations'));
-app.use('/api/categories', require('./routes/api/categories'));
+app.use('/api/programs', require('./routes/api/programs'));
+app.use('/api/tvchannels', require('./routes/api/tvchannels'));
 
 app.use(express.static(path.join(__dirname, '/frontend/build')));
 app.get('/api', function (req, res) {

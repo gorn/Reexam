@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const AreaSchema = new Schema({
+const TvChannelSchema = new Schema({
     name: {type:String},
     namePath : {type:String}
 });
-module.exports = Area = mongoose.model('area', AreaSchema);
+
+module.exports = TvChannel = mongoose.model('tvchannel', TvChannelSchema);
