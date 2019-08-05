@@ -58,8 +58,6 @@ router.get('/favorite/:id', (req, res) => {
             .catch(err => res.send(err))
 });
 
-
-
 router.put('/favorite/:id', (req, res) => {
     User.findOne({ _id: req.params.id }, (err, user) => {
         if(err) return console.error(err);
@@ -73,13 +71,17 @@ router.put('/favorite/:id', (req, res) => {
 });
 
 router.put('/favorite/delete/:id', async (req, res) => {
-    const { id } = req.params;
-    const { favorite } = req.body;
+
+    console.log(req.params.id);
+    console.log (req.query.favorite);
+    const  id  = req.params.id;
+    const favorite = req.query.favorite;
     try {
         const updatedUser = await User.findByIdAndUpdate(id,
-            { $pull: { favorites: favorite } },
+            { $pull: { favorite: favorite } },
             { new: true },
         );
+        console.log(id);
         console.log('Id:' + id + ', Favorite: '+favorite );
         res.send(updatedUser);
     } catch (e) {
@@ -88,17 +90,6 @@ router.put('/favorite/delete/:id', async (req, res) => {
     }
 });
 
-// router.put('/favorite/delete/:id', (req, res) => {
-//     User.findOne({_id: req.params.id}, (err, user) =>{
-//         if(err) return console.error(err);
-//         user.favorite = user.favorite.filter((x) => x !== req.body.favorite);
-//         user.save((err,user) => {
-//             if (err) return console.error(err);
-//             console.log(user);
-//         });
-//         res.json(user);
-//     })
-// });
 
 
 module.exports = router;

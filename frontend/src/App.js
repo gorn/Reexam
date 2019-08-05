@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import Post from './components/Post';
 import TvChannels from "./components/TvChannels";
-import Locations from "./components/Locations";
-import JobPosts from "./components/JobPosts";
-import Job from "./components/Job";
+import Programs from "./components/Programs";
+import Program from "./components/Program";
 import Login from "./components/Login";
 import AuthServise from "./components/AuthServise";
 import SuccessLogin from "./components/LoginSuccess";
@@ -84,18 +82,18 @@ class App extends Component{
                         <Route exact path={`/jobs/`}
                                render={(props) =>
                                    <TvChannels {...props}
-                                               jobs={this.state.jobs}
-                                               category={props.match.params.category}
-                                               area={this.state.area}
+                                               programs={this.state.programs}
+                                               tvchannel={props.match.params.tvchannel}
+
                                    />
                                }
                         />
 
                         <Route exact path={`/programs/:tvchannels`}
                                render={(props) =>
-                                   <JobPosts {...props}
-                                                 jobs={this.state.jobs}
-                                                 category={props.match.params.category}
+                                   <Programs {...props}
+                                                 programs={this.state.programs}
+                                                 tvchannel={props.match.params.tvchannel}
                                    />
                                }
                         />
