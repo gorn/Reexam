@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 export class Program extends Component {
     render() {
         const program = this.props.match.params.id;
-        console.log(this.props);
+        console.log(this.props.program.title);
         console.log(program);
         if (!program) {
             return <p>Waiting for program</p>
