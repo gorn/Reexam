@@ -8,10 +8,11 @@ class Programs extends Component{
     const tvchannelName = this.props.match.params.tvchannels;
     console.log("TVCHanel name: " + tvchannelName);
 
-    const programs = this.props.programs;
+    let programs = this.props.programs;
     console.log("Programs: ");
     console.log(programs);
 
+    programs = programs.filter (program => (tvchannelName == program.tvchannel.name) );
 //    if(programs <=0) {
 //      return <p>Loading ...</p>
 //    } else {
