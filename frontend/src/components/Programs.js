@@ -3,14 +3,10 @@ import {Link} from "react-router-dom";
 
 class Programs extends Component{
   render() {
-    console.log(this.props);
 
     const tvchannelName = this.props.match.params.tvchannels;
-    console.log("TVCHanel name: " + tvchannelName);
 
     let programs = this.props.programs;
-    console.log("Programs: ");
-    console.log(programs);
 
     programs = programs.filter (program => (tvchannelName == program.tvchannel.name) );
 //    if(programs <=0) {
