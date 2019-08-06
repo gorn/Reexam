@@ -4,7 +4,6 @@ import TvChannels from "./components/TvChannels";
 import Programs from "./components/Programs";
 import Program from "./components/Program";
 import Login from "./components/Login";
-import FavoriteList from "./components/FavoriteList";
 import AuthServise from "./components/AuthServise";
 
 

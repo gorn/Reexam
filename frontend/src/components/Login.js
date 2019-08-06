@@ -26,7 +26,7 @@ class Login extends Component{
       }).then(res => {
           if (res.status === 200) {
               console.log('hello world');
-              this.props.history.push(`/post`);
+              this.props.history.push('/post');
 
           }else{
               const error = new Error(res.error);
