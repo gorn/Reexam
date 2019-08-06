@@ -15,11 +15,11 @@ export class Program extends Component {
             <div>
                 <Link to ={"/"}> <p>Home</p></Link>
                 <header>
-                    <h1>Title : {program.title}</h1>
-                    <p>Description: {program.description}</p>
-                    <p>First on air: {program.first}</p>
-                    <p>Next time in your tv: {program.next}</p>
-                    <p>Tv channel that it will be on: {program.tvchannel}</p>
+                    <h1>Title : {this.props.program.title}</h1>
+                    <p>Description: {this.props.program.description}</p>
+                    <p>First on air: {this.props.program.first}</p>
+                    <p>Next time in your tv: {this.props.program.next}</p>
+                    <p>Tv channel that it will be on: {this.props.program.tvchannel}</p>
                 </header>
             </div>
         )
