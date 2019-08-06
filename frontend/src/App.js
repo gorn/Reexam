@@ -16,7 +16,6 @@ class App extends Component{
             programs: [],
             user: {}
         };
-        console.log(props.match.params.tvchannel);
     }
 
     channelsStore(){
@@ -79,15 +78,6 @@ class App extends Component{
                                }
                         />
 
-                        {/*<Route exact path={`/programs/`}*/}
-                               {/*render={(props) =>*/}
-                                   {/*<TvChannels {...props}*/}
-                                               {/*programs={this.state.programs}*/}
-                                               {/*tvchannel={props.match.params.tvchannel}*/}
-
-                                   {/*/>*/}
-                               {/*}*/}
-                        {/*/>*/}
 
                         <Route exact path={`/:tvchannels`}
                                render={(props) =>
