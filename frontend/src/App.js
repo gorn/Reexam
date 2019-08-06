@@ -5,6 +5,7 @@ import Programs from "./components/Programs";
 import Program from "./components/Program";
 import Login from "./components/Login";
 import AuthServise from "./components/AuthServise";
+import FavoriteList from "./components/FavoriteList";
 
 
 class App extends Component{
@@ -14,7 +15,7 @@ class App extends Component{
         this.state = {
             tvchannels: [],
             programs: [],
-            user: {}
+            users: {}
         };
     }
 
@@ -28,10 +29,16 @@ class App extends Component{
         localStorage.setItem("programs", JSON.stringify(programs))
     }
 
+    favoriteStore() {
+        let favoritelist = this.state.users;
+        localStorage.setItem("favorite", JSON.stringify(favoritelist))
+    }
+
     componentDidMount() {
         //await data.
         this.getPrograms();
         this.getTvChannels();
+        this.getFavoriteList();
     }
 
     async getPrograms () {
@@ -49,6 +56,14 @@ class App extends Component{
              .then(res => {this.setState({ tvchannels: res.tvchannels }); } );
         this.channelsStore();
     };
+
+    getFavoriteList(){
+        fetch (`https://jobappexam.herokuapp.com/api/users/favorite/:id`)
+            .then(response => response.json())
+            .then(res=>{this.setState({users:res.users})
+            });
+        this.favoriteStore();
+    }
 
     getProgramId (id)  {
         let programPosition = this.state.programs.find(el => el._id === id);
@@ -99,14 +114,14 @@ class App extends Component{
                                    </div>
                                }
                         />
-                        {/*<Route exact path ={`/userSchedule/:id`}*/}
-                             {/*render = {(props) =>*/}
-                                 {/*<FavoriteList{...props}*/}
-                                              {/*users = {this.state.user}*/}
-                                              {/*favorite = {props.match.params.favorite}*/}
-                                 {/*/>*/}
-                             {/*}*/}
-                    {/*/>*/}
+                        <Route exact path ={`/userSchedule/:id`}
+                             render = {(props) =>
+                                 <FavoriteList{...props}
+                                              users = {this.state.user}
+                                              favorite = {props.match.params.favorite}
+                                 />
+                             }
+                    />
 
                     </Switch>
                 </Router>
