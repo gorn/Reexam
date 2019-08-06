@@ -9,12 +9,11 @@ class Programs extends Component{
     if(programs <= 0){
       return  <p>Loading...</p>
     } else {
+      console.log(programs);
       let programFilter = programs.filter(
       program => ( !(program.tvchannel === null) )  &&
              (program.tvchannel.namePath === this.props.tvchannels)
       );
-      console.log("log na this props.programs.tvchannel z té funkce"+this.props.programs.tvchannel);
-      console.log("log na this.props.programs.tvchannels taky z té funkce"+this.props.programs.tvchannels);
       if(programFilter.length <= 0){
         return <p>Sorry there are no program on this channel</p>
       } else {
