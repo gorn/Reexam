@@ -39,7 +39,7 @@ class App extends Component{
             `https://jobappexam.herokuapp.com/api/programs`
         );
         const json = await response.json();
-        this.setState({ jobs: json });
+        this.setState({ programs: json });
         this.programStore();
     }
 
