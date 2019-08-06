@@ -4,11 +4,13 @@ import {Link} from "react-router-dom";
 class Programs extends Component{
   render() {
     console.log(this.props);
-    console.log(this.props.match.params.tvchannels);
+
+    const tvchanel = this.props.match.params.tvchannels;
+    console.log("TVCHanel: "+tvchanel);
     return(
 
     <div>
-      <h3>{this.props.match.tvchannels}</h3>
+      <h3>{tvchannel}</h3>
       <h4>List of programs</h4>
 
     </div>)
