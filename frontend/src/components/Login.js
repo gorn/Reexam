@@ -7,7 +7,7 @@ class Login extends Component{
         this.state = {
             userName: '',
             password: '',
-            _id: ''
+            id: ''
         };
     }
     handleInputChange = (event) => {
@@ -27,8 +27,8 @@ class Login extends Component{
       }).then(res => {
           if (res.status === 200) {
               console.log('hello world');
-              console.log(this.state._id);
-              this.props.history.push(`/userSchedule/${this.state._id}`);
+              console.log(this.state.id);
+              this.props.history.push(`/userSchedule/${this.state.id}`);
 
           }else{
               const error = new Error(res.error);
