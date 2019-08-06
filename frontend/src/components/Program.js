@@ -3,9 +3,10 @@ import {Link} from "react-router-dom";
 
 export class Program extends Component {
     render() {
-        const program = this.props.program;
+        const program = this.props.match.params.id;
+        console.log(program);
         if (!program) {
-            return <p>Waiting for jobs</p>
+            return <p>Waiting for program</p>
         }
         return (
             <div>
