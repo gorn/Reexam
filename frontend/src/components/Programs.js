@@ -5,6 +5,7 @@ class Programs extends Component{
   render() {
     let programs = this.props.programs;
     console.log(this.props.programs);
+    console.log(this.props.tvchannels);
     if(programs <= 0){
       return  <p>Loading...</p>
     } else {
