@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b96b2cfa-b119-472c-aaea-67feb00ef68b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Program.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Program.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frontend/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="84" column="9" selection-start-line="84" selection-start-column="9" selection-end-line="84" selection-end-column="9" />
+            <state relative-caret-position="68">
+              <caret line="79" column="36" selection-start-line="79" selection-start-column="36" selection-end-line="79" selection-end-column="36" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -77,11 +76,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/src/components/Login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="29" column="42" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
+            <state relative-caret-position="357">
+              <caret line="30" column="66" selection-start-line="30" selection-start-column="66" selection-end-line="30" selection-end-column="66" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -144,10 +143,10 @@
         <option value="$PROJECT_DIR$/routes/api/users.js" />
         <option value="$PROJECT_DIR$/frontend/src/components/TvChannels.js" />
         <option value="$PROJECT_DIR$/frontend/src/components/FavoriteList.js" />
-        <option value="$PROJECT_DIR$/frontend/src/App.js" />
         <option value="$PROJECT_DIR$/frontend/src/components/Programs.js" />
         <option value="$PROJECT_DIR$/frontend/src/components/Program.js" />
         <option value="$PROJECT_DIR$/frontend/src/components/Login.js" />
+        <option value="$PROJECT_DIR$/frontend/src/App.js" />
       </list>
     </option>
   </component>
@@ -268,21 +267,7 @@
       <workItem from="1559887618073" duration="17692000" />
       <workItem from="1563712176584" duration="7025000" />
       <workItem from="1564988679640" duration="29543000" />
-      <workItem from="1565075868933" duration="27365000" />
-    </task>
-    <task id="LOCAL-00021" summary="BE working">
-      <created>1565023907056</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1565023907056</updated>
-    </task>
-    <task id="LOCAL-00022" summary="FE npm problem">
-      <created>1565078243781</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1565078243781</updated>
+      <workItem from="1565075868933" duration="29027000" />
     </task>
     <task id="LOCAL-00023" summary="FE npm problem trying1">
       <created>1565079007278</created>
@@ -613,17 +598,30 @@
       <option name="project" value="LOCAL" />
       <updated>1565121102913</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="FE linking logs36&#10;                      Adding favorite list 3">
+      <created>1565121618292</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1565121618292</updated>
+    </task>
+    <task id="LOCAL-00071" summary="                      Adding favorite list 4">
+      <created>1565122045417</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1565122045417</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="207895000" />
+    <option name="totallyTimeSpent" value="209557000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25512227" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25512227" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -635,7 +633,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.329429" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49930844" visible="true" weight="0.29282576" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49930844" visible="true" weight="0.29282576" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5006916" side_tool="true" weight="0.31955484" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.329429" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -666,8 +664,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="FE linking logs12&#10;Adding favorite list 0" />
-    <MESSAGE value="FE linking logs12&#10;                      Adding favorite list 3" />
     <MESSAGE value="FE linking logs13&#10;                      Adding favorite list 3" />
     <MESSAGE value="FE linking logs14&#10;                      Adding favorite list 3" />
     <MESSAGE value="FE linking logs15&#10;                      Adding favorite list 3" />
@@ -691,7 +687,9 @@
     <MESSAGE value="FE linking logs33&#10;                      Adding favorite list 3" />
     <MESSAGE value="FE linking logs34&#10;                      Adding favorite list 3" />
     <MESSAGE value="FE linking logs35&#10;                      Adding favorite list 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="FE linking logs35&#10;                      Adding favorite list 3" />
+    <MESSAGE value="FE linking logs36&#10;                      Adding favorite list 3" />
+    <MESSAGE value="                      Adding favorite list 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="                      Adding favorite list 4" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/frontend/src/serviceWorker.js" />
@@ -861,26 +859,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/components/FavoriteList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="15" column="63" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="84" column="9" selection-start-line="84" selection-start-column="9" selection-end-line="84" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/components/Program.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -913,8 +891,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/components/Login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="29" column="42" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
+        <state relative-caret-position="357">
+          <caret line="30" column="66" selection-start-line="30" selection-start-column="66" selection-end-line="30" selection-end-column="66" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/components/FavoriteList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="15" column="63" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="79" column="36" selection-start-line="79" selection-start-column="36" selection-end-line="79" selection-end-column="36" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>

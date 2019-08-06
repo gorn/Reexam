@@ -69,6 +69,18 @@ class App extends Component{
         let programPosition = this.state.programs.find(el => el._id === id);
         return programPosition;
     };
+    getUserId(id){
+        let userPosition = this.state.users.find(el => el._id ===id);
+        return userPosition;
+    }
+
+    renderUser (props, id) {
+        let user = this.getUserId(id);
+        return <FavoriteList {...props}
+            user={user}
+            users={this.state.users}
+        />
+    }
 
     renderProgram = (props, id) => {
         let program = this.getProgramId(id);
@@ -116,10 +128,7 @@ class App extends Component{
                         />
                         <Route exact path ={`/userSchedule/:id`}
                              render = {(props) =>
-                                 <FavoriteList{...props}
-                                              users = {this.state.user}
-                                              favorite = {props.match.params.favorite}
-                                 />
+                                 this.renderUser(props, props.match.params.id)
                              }
                     />
 
