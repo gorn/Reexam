@@ -16,7 +16,6 @@ class Programs extends Component{
     <div>
       <h3>{tvchannel}</h3>
       <h4>List of programs</h4>
-      <p>{programs}</p>
     </div>)
     // let programs = this.props.programs;
     // console.log("Programs: " + programs);
