@@ -4,6 +4,7 @@ import TvChannels from "./components/TvChannels";
 import Programs from "./components/Programs";
 import Program from "./components/Program";
 import Login from "./components/Login";
+import FavoriteList from "./components/FavoriteList";
 import AuthServise from "./components/AuthServise";
 
 
@@ -97,6 +98,14 @@ class App extends Component{
                                    <div>
                                        <Login {...props}/>
                                    </div>
+                               }
+                        />
+                        <Route exact path ={`/userSchedule/:id`}
+                               render = {(props) =>
+                               <FavoriteList{...props}
+                                   users = {this.state.user}
+                                   favorite = {props.match.params.favorite}
+                               />
                                }
                         />
 
