@@ -4,8 +4,8 @@ import {Link} from "react-router-dom";
 class Programs extends Component{
   render() {
     let programs = this.props.programs;
-    console.log(this.props.programs);
-    console.log(this.props.match.params.tvchannel);
+    console.log("všechny dostupné programy"+this.props.programs);
+    console.log("všechny programy, které by měli pasovat k stanici"+this.props.match.params.tvchannel);
     if(programs <= 0){
       return  <p>Loading...</p>
     } else {
@@ -13,8 +13,8 @@ class Programs extends Component{
       program => ( !(program.tvchannel === null) )  &&
              (program.tvchannel.namePath === this.props.tvchannels)
       );
-      console.log(this.props.programs.tvchannel);
-      console.log(this.props.programs.tvchannels);
+      console.log("log na this props.programs.tvchannel z té funkce"+this.props.programs.tvchannel);
+      console.log("log na this.props.programs.tvchannels taky z té funkce"+this.props.programs.tvchannels);
       if(programFilter.length <= 0){
         return <p>Sorry there are no program on this channel</p>
       } else {
