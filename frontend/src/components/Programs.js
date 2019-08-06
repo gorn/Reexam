@@ -7,12 +7,16 @@ class Programs extends Component{
 
     const tvchannel = this.props.match.params.tvchannels;
     console.log("TVCHanel: "+tvchannel);
+
+    const programs = this.props.programs;
+    console.log("Programs: ");
+    console.log(programs);
     return(
 
     <div>
       <h3>{tvchannel}</h3>
       <h4>List of programs</h4>
-
+      <p>{programs}</p>
     </div>)
     // let programs = this.props.programs;
     // console.log("Programs: " + programs);
