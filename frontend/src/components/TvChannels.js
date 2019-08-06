@@ -11,7 +11,7 @@ class TvChannels extends Component{
                 <h1>Tv Channels</h1>
 
                 {this.props.tvchannels.map(el => {
-                    return <Link key={el._id} to={`/${el.namePath}`}><p>{el.name} <br></br>
+                    return <Link key={el._id} to={`/programs/${el.namePath}`}><p>{el.name} <br></br>
                     </p></Link>
                 })}
             </div>

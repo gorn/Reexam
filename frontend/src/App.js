@@ -78,8 +78,7 @@ class App extends Component{
                                }
                         />
 
-
-                        <Route exact path={`/:tvchannels`}
+                        <Route exact path={`/programs/:tvchannels`}
                                render={(props) =>
                                    <Programs {...props}
                                                  programs={this.state.programs}
