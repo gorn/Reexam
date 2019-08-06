@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 class Programs extends Component{
   render() {
     let programs = this.props.programs;
-    console.log("všechny dostupné programy"+this.props.programs);
+    console.log("Programs: " + programs);
     console.log("všechny programy, které by měli pasovat k stanici"+this.props.match.params.tvchannel);
     if(programs <= 0){
       return  <p>Loading...</p>
