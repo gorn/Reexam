@@ -5,8 +5,8 @@ class Programs extends Component{
   render() {
     console.log(this.props);
 
-    const tvchanel = this.props.match.params.tvchannels;
-    console.log("TVCHanel: "+tvchanel);
+    const tvchannel = this.props.match.params.tvchannels;
+    console.log("TVCHanel: "+tvchannel);
     return(
 
     <div>
