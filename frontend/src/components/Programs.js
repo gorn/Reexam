@@ -16,6 +16,8 @@ class Programs extends Component{
 //    if(programs <=0) {
 //      return <p>Loading ...</p>
 //    } else {
+      
+
     return(
         <div>
           <h3>{tvchannelName}</h3>
@@ -23,13 +25,13 @@ class Programs extends Component{
           <ul>
             {programs.map(program => {
               return(
-                  <li>
-                    {program.title}
-                    vysilano na: {program.tvchannel.name}
-                    test: { tvchannelName == program.tvchannel.name ? 'chceme' : 'nechceme' }
-                  </li>
+                  <Link to={`/program/${program._id}`}>
+                  <li>{program.title}</li>
+                  </Link>
               )
-            })}
+            }
+            )
+            }
           </ul>
         </div>
     )
