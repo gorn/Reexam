@@ -78,7 +78,7 @@ class App extends Component{
                                }
                         />
 
-                        <Route exact path={`/jobs/`}
+                        <Route exact path={`/programs/`}
                                render={(props) =>
                                    <TvChannels {...props}
                                                programs={this.state.programs}
@@ -108,15 +108,6 @@ class App extends Component{
                                    </div>
                                }
                         />
-                        {/*<Route path="/loginSuccess" component={AuthServise(SuccessLogin)} />*/}
-                        {/*<Route exact path={'/post'}*/}
-                               {/*render={(props) =>*/}
-                                   {/*<Post {...props}*/}
-                                         {/*categories={this.state.categories}*/}
-                                         {/*areas={this.state.areas}*/}
-                                   {/*/>*/}
-                               {/*}*/}
-                        {/*/>*/}
 
                     </Switch>
                 </Router>

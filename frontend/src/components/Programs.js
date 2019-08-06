@@ -9,7 +9,7 @@ class Programs extends Component{
     } else {
       let programFilter = programs.filter(
       program => ( !(program.tvchannel === null) )  &&
-             (program.tvchannel.namePath === this.props.tvchannel)
+             (program.tvchannel.namePath === this.props.tvchannels)
       );
       if(programFilter.length <= 0){
         return <p>Sorry there are no program on this channel</p>
@@ -20,7 +20,7 @@ class Programs extends Component{
             <h1>Programs</h1>
             <h3>List of programs</h3>
             {programFilter.map(el => {
-              return <span><Link to={`/job/${el._id}`}>
+              return <span><Link to={`/program/${el._id}`}>
                      <p>{el.title}</p>
                      </Link>{el.tvchannel === null ? 'tvchannel N/A' : el.tvchannel.name}</span>
             })}      
