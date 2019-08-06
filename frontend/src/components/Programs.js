@@ -16,7 +16,16 @@ class Programs extends Component{
     <div>
       <h3>{tvchannel}</h3>
       <h4>List of programs</h4>
-    </div>)
+      <ul>
+        {programs.map(el => {
+          return(
+              <li>{el.title}</li>
+          )
+        })}
+
+        </ul>
+    </div>
+    )
     // let programs = this.props.programs;
     // console.log("Programs: " + programs);
     // console.log("všechny programy, které by měli pasovat k stanici"+this.props.match.params.tvchannel);
@@ -45,6 +54,6 @@ class Programs extends Component{
     //     )
     //   }
     // }
-  }
+        }
 }
 export default Programs;
