@@ -5,7 +5,6 @@ import Programs from "./components/Programs";
 import Program from "./components/Program";
 import Login from "./components/Login";
 import AuthServise from "./components/AuthServise";
-import SuccessLogin from "./components/LoginSuccess";
 
 
 class App extends Component{
