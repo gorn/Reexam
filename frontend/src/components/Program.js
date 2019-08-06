@@ -5,8 +5,7 @@ export class Program extends Component {
     render() {
         const program = this.props.match.params.id;
         console.log(this.props.program.title);
-        let programinfo = this.props.program;
-        console.log(programinfo);
+        // let programinfo = this.props.program;
         console.log(program);
         console.log(this.props);
         if (!program) {
