@@ -11,21 +11,28 @@ class Programs extends Component{
     const programs = this.props.programs;
     console.log("Programs: ");
     console.log(programs);
-    return(
 
-    <div>
-      <h3>{tvchannel}</h3>
-      <h4>List of programs</h4>
-      <ul>
-        {programs.map(el => {
-          return(
-              <li>{el.title} - {el.tvchannel.name}</li>
-          )
-        })}
-
-        </ul>
-    </div>
-    )
+    if(programs <=0) {
+      return <p>Loading ...</p>
+    } else {
+      return (
+          <div>
+            <h3>{tvchannelName}</h3>
+            <h4>List of programs</h4>
+            <ul>
+              {programs.map(program => {
+                return (
+                    <li>
+                      {program.title}
+                      vysilano na: {program.tvchannel.name}
+                      test: {tvchannelName == program.tvchannel.name ? 'chceme' : 'nechceme'}
+                    </li>
+                )
+              })}
+            </ul>
+          </div>
+      )
+    }
     // let programs = this.props.programs;
     // console.log("Programs: " + programs);
     // console.log("všechny programy, které by měli pasovat k stanici"+this.props.match.params.tvchannel);
@@ -54,6 +61,6 @@ class Programs extends Component{
     //     )
     //   }
     // }
-        }
+}
 }
 export default Programs;
