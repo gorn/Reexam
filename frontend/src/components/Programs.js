@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 class Programs extends Component{
   render() {
     let programs = this.props.programs;
+    console.log(this.props.programs);
     if(programs <= 0){
       return  <p>Loading...</p>
     } else {
@@ -11,6 +12,8 @@ class Programs extends Component{
       program => ( !(program.tvchannel === null) )  &&
              (program.tvchannel.namePath === this.props.tvchannels)
       );
+      console.log(this.props.programs.tvchannel);
+      console.log(this.props.programs.tvchannels);
       if(programFilter.length <= 0){
         return <p>Sorry there are no program on this channel</p>
       } else {
