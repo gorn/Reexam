@@ -42,8 +42,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frontend/src/components/Program.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="7" column="8" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="8" selection-end-column="33" />
+            <state relative-caret-position="136">
+              <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -266,14 +266,7 @@
       <workItem from="1559887618073" duration="17692000" />
       <workItem from="1563712176584" duration="7025000" />
       <workItem from="1564988679640" duration="29543000" />
-      <workItem from="1565075868933" duration="26166000" />
-    </task>
-    <task id="LOCAL-00018" summary="Hello it's a me albi">
-      <created>1563718963725</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1563718963725</updated>
+      <workItem from="1565075868933" duration="26504000" />
     </task>
     <task id="LOCAL-00019" summary="Reexam backend">
       <created>1565008270570</created>
@@ -611,11 +604,18 @@
       <option name="project" value="LOCAL" />
       <updated>1565106455216</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="FE linking logs33&#10;                      Adding favorite list 3">
+      <created>1565120472341</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1565120472341</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="206696000" />
+    <option name="totallyTimeSpent" value="207034000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -664,7 +664,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="FE linking logs12" />
     <MESSAGE value="FE linking logs12&#10;Adding favorite list" />
     <MESSAGE value="FE linking logs12&#10;Adding favorite list 1" />
     <MESSAGE value="FE linking logs12&#10;Adding favorite list 0" />
@@ -689,7 +688,8 @@
     <MESSAGE value="FE linking logs30&#10;                      Adding favorite list 3" />
     <MESSAGE value="FE linking logs31&#10;                      Adding favorite list 3" />
     <MESSAGE value="FE linking logs32&#10;                      Adding favorite list 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="FE linking logs32&#10;                      Adding favorite list 3" />
+    <MESSAGE value="FE linking logs33&#10;                      Adding favorite list 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="FE linking logs33&#10;                      Adding favorite list 3" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/frontend/src/serviceWorker.js" />
@@ -911,8 +911,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/components/Program.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="8" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="8" selection-end-column="33" />
+        <state relative-caret-position="136">
+          <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
