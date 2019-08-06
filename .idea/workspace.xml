@@ -16,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frontend/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="79" selection-start-line="79" selection-end-line="79" />
+            <state relative-caret-position="-816">
+              <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -40,7 +40,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/src/components/Programs.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
@@ -231,7 +231,7 @@
       <workItem from="1559887618073" duration="17692000" />
       <workItem from="1563712176584" duration="7025000" />
       <workItem from="1564988679640" duration="29543000" />
-      <workItem from="1565075868933" duration="8153000" />
+      <workItem from="1565075868933" duration="8703000" />
     </task>
     <task id="LOCAL-00001" summary="I like turtles">
       <created>1559647526696</created>
@@ -464,15 +464,28 @@
       <option name="project" value="LOCAL" />
       <updated>1565085803215</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="FE linking logs9">
+      <created>1565086044350</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1565086044350</updated>
+    </task>
+    <task id="LOCAL-00035" summary="FE linking logs10">
+      <created>1565086270722</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1565086270722</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="188683000" />
+    <option name="totallyTimeSpent" value="189233000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25512227" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -517,8 +530,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="I like turtles" />
-    <MESSAGE value="I like tortise too" />
     <MESSAGE value="Frontend" />
     <MESSAGE value="Frontend1" />
     <MESSAGE value="Frontend sorting issue and auth issue" />
@@ -542,7 +553,9 @@
     <MESSAGE value="FE linking logs6" />
     <MESSAGE value="FE linking logs7" />
     <MESSAGE value="FE linking logs8" />
-    <option name="LAST_COMMIT_MESSAGE" value="FE linking logs8" />
+    <MESSAGE value="FE linking logs9" />
+    <MESSAGE value="FE linking logs10" />
+    <option name="LAST_COMMIT_MESSAGE" value="FE linking logs10" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/frontend/src/serviceWorker.js" />
@@ -742,20 +755,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/App.js">
+    <entry file="file://$PROJECT_DIR$/frontend/src/components/Programs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="79" selection-start-line="79" selection-end-line="79" />
+        <state relative-caret-position="119">
+          <caret line="7" column="49" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="49" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/components/Programs.js">
+    <entry file="file://$PROJECT_DIR$/frontend/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="49" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="49" />
+        <state relative-caret-position="-816">
+          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>

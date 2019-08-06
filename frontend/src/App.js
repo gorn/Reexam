@@ -65,7 +65,6 @@ class App extends Component{
 
 
     render() {
-        console.log(props.params.match.tvchannel);
         return (
             <div className="App">
                 <Router>
