@@ -100,14 +100,14 @@ class App extends Component{
                                    </div>
                                }
                         />
-                        <Route exact path ={`/userSchedule/:id`}
-                               render = {(props) =>
-                               <FavoriteList{...props}
-                                   users = {this.state.user}
-                                   favorite = {props.match.params.favorite}
-                               />
-                               }
-                        />
+                        {/*<Route exact path ={`/userSchedule/:id`}*/}
+                             {/*render = {(props) =>*/}
+                                 {/*<FavoriteList{...props}*/}
+                                              {/*users = {this.state.user}*/}
+                                              {/*favorite = {props.match.params.favorite}*/}
+                                 {/*/>*/}
+                             {/*}*/}
+                    {/*/>*/}
 
                     </Switch>
                 </Router>
