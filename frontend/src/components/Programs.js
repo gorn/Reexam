@@ -19,7 +19,7 @@ class Programs extends Component{
       <ul>
         {programs.map(el => {
           return(
-              <li>{el.title}</li>
+              <li>{el.title} - {el.tvchannel.name}</li>
           )
         })}
 
