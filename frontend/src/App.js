@@ -16,6 +16,7 @@ class App extends Component{
             programs: [],
             user: {}
         };
+        console.log(props.match.params.tvchannel);
     }
 
     channelsStore(){
@@ -93,6 +94,7 @@ class App extends Component{
                                    <Programs {...props}
                                                  programs={this.state.programs}
                                                  tvchannel={props.match.params.tvchannel}
+
                                    />
                                }
                         />
