@@ -43,8 +43,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frontend/src/components/Program.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+            <state relative-caret-position="340">
+              <caret line="23" column="66" selection-start-line="23" selection-start-column="66" selection-end-line="23" selection-end-column="66" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -267,21 +267,7 @@
       <workItem from="1559887618073" duration="17692000" />
       <workItem from="1563712176584" duration="7025000" />
       <workItem from="1564988679640" duration="29543000" />
-      <workItem from="1565075868933" duration="24278000" />
-    </task>
-    <task id="LOCAL-00014" summary="Hello it's a me albi">
-      <created>1563716301481</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1563716301481</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Hello it's a me albi">
-      <created>1563717021229</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1563717021229</updated>
+      <workItem from="1565075868933" duration="25142000" />
     </task>
     <task id="LOCAL-00016" summary="Hello it's a me albi">
       <created>1563717672288</created>
@@ -612,11 +598,25 @@
       <option name="project" value="LOCAL" />
       <updated>1565105091695</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="FE linking logs29&#10;                      Adding favorite list 3">
+      <created>1565105340466</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1565105340466</updated>
+    </task>
+    <task id="LOCAL-00064" summary="FE linking logs30&#10;                      Adding favorite list 3">
+      <created>1565105686570</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1565105686570</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="204808000" />
+    <option name="totallyTimeSpent" value="205672000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -665,8 +665,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="FE linking logs8" />
-    <MESSAGE value="FE linking logs9" />
     <MESSAGE value="FE linking logs10" />
     <MESSAGE value="FE linking logs11" />
     <MESSAGE value="FE linking logs12" />
@@ -690,7 +688,9 @@
     <MESSAGE value="FE linking logs26&#10;                      Adding favorite list 3" />
     <MESSAGE value="FE linking logs27&#10;                      Adding favorite list 3" />
     <MESSAGE value="FE linking logs28&#10;                      Adding favorite list 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="FE linking logs28&#10;                      Adding favorite list 3" />
+    <MESSAGE value="FE linking logs29&#10;                      Adding favorite list 3" />
+    <MESSAGE value="FE linking logs30&#10;                      Adding favorite list 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="FE linking logs30&#10;                      Adding favorite list 3" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/frontend/src/serviceWorker.js" />
@@ -912,8 +912,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/components/Program.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+        <state relative-caret-position="340">
+          <caret line="23" column="66" selection-start-line="23" selection-start-column="66" selection-end-line="23" selection-end-column="66" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
