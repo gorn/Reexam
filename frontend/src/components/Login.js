@@ -40,7 +40,7 @@ class Login extends Component{
     render() {
         return(
             <form onSubmit={this.onSubmit}>
-                <h1>Login for posting jobs</h1>
+                <h1>Login</h1>
                 <div>
                     <input
                         type="name"

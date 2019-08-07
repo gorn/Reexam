@@ -12,6 +12,7 @@ router.post('/authenticate', function(req, res) {
     User.findOne({ userName }, function(err, user) {
         if (err) {
             console.error(err);
+            console.log(user);
             res.status(500)
                 .json({
                     error: 'Internal error please try again'
@@ -40,6 +41,7 @@ router.post('/authenticate', function(req, res) {
                     });
                     res.cookie('token', token, { httpOnly: true })
                         .sendStatus(200);
+
                 }
             });
         }
@@ -56,6 +58,15 @@ router.get('/favorite/:id', (req, res) => {
         .exec()
             .then(favorite =>res.json(favorite))
             .catch(err => res.send(err))
+});
+
+router.get('/favorite', (req, res) =>{
+    User.find({},(err, user)=>{
+        if(err){
+            res.send(err);
+        }
+        res.json({success: true, user: user});
+    });
 });
 
 router.put('/favorite/:id', (req, res) => {

@@ -16,7 +16,8 @@ class App extends Component{
             tvchannels: [],
             programs: [],
             users: {}
-        };
+        }
+        ;
     }
 
     channelsStore(){
@@ -57,13 +58,13 @@ class App extends Component{
         this.channelsStore();
     };
 
-    // getFavoriteList(){
-    //     fetch (`https://jobappexam.herokuapp.com/api/users/favorite/:id`)
-    //         .then(response => response.json())
-    //         .then(res=>{this.setState({users:res.users})
-    //         });
-    //     this.favoriteStore();
-    // }
+    getFavoriteList(){
+        fetch (`https://jobappexam.herokuapp.com/api/users/favorite`)
+            .then(response => response.json())
+            .then(res=>{this.setState({users:res.users})
+            });
+        this.favoriteStore();
+    }
 
     getProgramId (id)  {
         let programPosition = this.state.programs.find(el => el._id === id);
