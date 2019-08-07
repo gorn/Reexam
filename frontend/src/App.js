@@ -72,6 +72,7 @@ class App extends Component{
     getUserId(id){
         let userPosition = this.state.users.find(el => el._id ===id);
         return userPosition;
+        console.log(userPosition);
     }
 
     renderUser (props, id) {
