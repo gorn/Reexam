@@ -8,7 +8,7 @@ class Programs extends Component{
 
     let programs = this.props.programs;
 
-    programs = programs.filter (program => (tvchannelName == program.tvchannel.name) );
+    programs = programs.filter (program => (tvchannelName === program.tvchannel.name) );
 //    if(programs <=0) {
 //      return <p>Loading ...</p>
 //    } else {

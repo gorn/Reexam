@@ -20,8 +20,7 @@ router.post('/programs/post', (req, res) => {
         description: newPrograms.description,
         first: newPrograms.first,
         next: newPrograms.next,
-        tvchannel: newPrograms.tvchannel,
-        favorite: newPrograms.favorite
+        tvchannel: newPrograms.tvchannel
     });
     programs.save();
     res.json({programs: newPrograms})

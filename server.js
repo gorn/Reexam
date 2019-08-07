@@ -40,7 +40,7 @@ mongoose.connect('mongodb+srv://albi123:albi123@cluster0-ihrbv.mongodb.net/test?
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/programs', require('./routes/api/programs'));
 app.use('/api/tvchannels', require('./routes/api/tvchannels'));
-app.use('/api/favorite', require('./routes/api/favorites'));
+app.use('/api/favorite', require('./routes/api/favorite'));
 
 app.use(express.static(path.join(__dirname, '/frontend/build')));
 app.get('/api', function (req, res) {
