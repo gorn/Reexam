@@ -4,6 +4,8 @@ import {Link} from "react-router-dom";
 export class Program extends Component {
     render() {
         const favorite = this.props.users.favorite;
+
+        console.log(this.props);
         console.log(favorite);
         if (!favorite) {
             return <p>You don't have any favorite programs yet</p>

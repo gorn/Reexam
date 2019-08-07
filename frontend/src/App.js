@@ -129,7 +129,10 @@ class App extends Component{
                         />
                         <Route exact path ={`/userSchedule`}
                              render = {(props) =>
-                                 this.renderUser(props, props.match.params.id)
+                                 <FavoriteList {...props}
+                                     user = {this.state.users}
+                                     favorite={props.match.params.favorite}
+                                 />
                              }
                     />
 
