@@ -21,9 +21,11 @@ router.post('/programs/post', (req, res) => {
         first: newPrograms.first,
         next: newPrograms.next,
         tvchannel: newPrograms.tvchannel,
-        user: newPrograms.user
+        favorite: newPrograms.favorite
     });
     programs.save();
     res.json({programs: newPrograms})
 });
+
+
 module.exports = router;

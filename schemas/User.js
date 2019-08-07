@@ -5,8 +5,7 @@ const saltRounds = 10;
 
 const UserSchema = new Schema({
     userName: {type: String, required: true, unique: true},
-    password: {type: String, required: true},
-    favorite: [{type: Schema.Types.ObjectId, ref:'programs'}]
+    password: {type: String, required: true}
 });
 UserSchema.pre('save', function(next) {
     if (this.isNew || this.isModified('password')) {
