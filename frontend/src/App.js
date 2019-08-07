@@ -38,7 +38,7 @@ class App extends Component{
         //await data.
         this.getPrograms();
         this.getTvChannels();
-        this.getFavoriteList();
+        // this.getFavoriteList();
     }
 
     async getPrograms () {
