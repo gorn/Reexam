@@ -126,7 +126,7 @@ class App extends Component{
                                    </div>
                                }
                         />
-                        <Route exact path ={`/userSchedule/:id`}
+                        <Route exact path ={`/userSchedule`}
                              render = {(props) =>
                                  this.renderUser(props, props.match.params.id)
                              }

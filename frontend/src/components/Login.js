@@ -28,7 +28,7 @@ class Login extends Component{
           if (res.status === 200) {
               console.log('hello world');
               console.log(this.props);
-              this.props.history.push(`/userSchedule/${this.state.id}`);
+              this.props.history.push(`/userSchedule`);
 
           }else{
               const error = new Error(res.error);
