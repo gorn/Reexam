@@ -69,19 +69,19 @@ class App extends Component{
         let programPosition = this.state.programs.find(el => el._id === id);
         return programPosition;
     };
-    getUserId(id){
-        let userPosition = this.state.users.find(el => el._id ===id);
-        return userPosition;
-        console.log(userPosition);
-    }
-
-    renderUser (props, id) {
-        let user = this.getUserId(id);
-        return <FavoriteList {...props}
-            user={user}
-            users={this.state.users}
-        />
-    }
+    // getUserId(id){
+    //     let userPosition = this.state.users.find(el => el._id ===id);
+    //     return userPosition;
+    //     console.log(userPosition);
+    // }
+    //
+    // renderUser (props, id) {
+    //     let user = this.getUserId(id);
+    //     return <FavoriteList {...props}
+    //         user={user}
+    //         users={this.state.users}
+    //     />
+    // }
 
     renderProgram = (props, id) => {
         let program = this.getProgramId(id);
@@ -130,7 +130,7 @@ class App extends Component{
                         <Route exact path ={`/userSchedule`}
                              render = {(props) =>
                                  <FavoriteList {...props}
-                                     user = {this.state.users}
+                                     users = {this.state.users}
                                      favorite={props.match.params.favorite}
                                  />
                              }
