@@ -35,7 +35,7 @@ router.post('/authenticate', function(req, res) {
                             error: 'Incorrect email or password'
                         });
                 } else {
-                    const payload = { userName, id };
+                    const payload = { userName};
                     const token = jwt.sign(payload, secret, {
                         expiresIn: '1h'
                     });
