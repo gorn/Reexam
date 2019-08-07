@@ -9,5 +9,5 @@ const ProgramsSchema = new Schema({
     tvchannel: {type: Schema.Types.ObjectId, ref:'tvchannel'}
 
 });
-module.exports = Programs = mongoose.model('programs', ProgramsSchema);
+module.exports = program = mongoose.model('program', ProgramsSchema);
 

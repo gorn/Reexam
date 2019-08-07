@@ -6,10 +6,9 @@ const authentication = require('../../authentication');
 
 router.get('/', (req, res) =>{
     Programs.find({})
-        .populate('user')
         .populate('tvchannel')
         .exec()
-            .then(program =>res.json(program))
+            .then(Programs =>res.json(Programs))
             .catch(err => res.send(err))
 });
 

@@ -8,7 +8,7 @@ const User = require('../../schemas/User');
 
 
 router.post('/authenticate', function(req, res) {
-    const { userName, password,id } = req.body;
+    const { userName, password } = req.body;
     console.log(req.body);
     User.findOne({ userName }, function(err, user) {
         if (err) {
@@ -36,7 +36,7 @@ router.post('/authenticate', function(req, res) {
                             error: 'Incorrect email or password'
                         });
                 } else {
-                    const payload = { userName, id};
+                    const payload = { userName};
                     const token = jwt.sign(payload, secret, {
                         expiresIn: '1h'
                     });

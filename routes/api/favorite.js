@@ -2,11 +2,11 @@ const express = require('express');
 const router = express.Router();
 const Favorite = require('../../schemas/Favorite');
 
-router.get('/', (req, res) =>{
+router.get('/Programs', (req, res) =>{
     Favorite.find({})
-        .populate('program')
+        .populate('Programs')
         .exec()
-        .then(program =>res.json(program))
+        .then(Programs =>res.json(Programs))
         .catch(err => res.send(err))
 });
 
@@ -21,5 +21,11 @@ router.post('/add', (req, res) => {
     console.log(favorite);
     res.json({favorite: favorite})
 });
+
+router.delete('/delete', (req,res)=> {
+    Favorite.deleteOne({'_id':req.body._id})
+        .catch(err => res.send(err))
+
+})
 
 module.exports = router;
