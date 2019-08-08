@@ -22,6 +22,7 @@ class App extends Component{
 
     channelsStore(){
         let tvchannels = this.state.tvchannels;
+        console.log(tvchannels);
         localStorage.setItem("tvchannels", JSON.stringify(tvchannels))
     }
 
@@ -35,7 +36,6 @@ class App extends Component{
         //await data.
         this.getPrograms();
         this.getTvChannels();
-        // this.getFavoriteList();
     }
 
     async getPrograms () {
@@ -52,33 +52,14 @@ class App extends Component{
              .then(response => response.json())
              .then(res => {this.setState({ tvchannels: res.tvchannels }); } );
         this.channelsStore();
+        console.log(this.state.tvchannels);
     };
 
-    // getFavoriteList(){
-    //     fetch (`https://jobappexam.herokuapp.com/api/users/favorite`)
-    //         .then(response => response.json())
-    //         .then(res=>{this.setState({users:res.users})
-    //         });
-    //     this.favoriteStore();
-    // }
 
     getProgramId (id)  {
         let programPosition = this.state.programs.find(el => el._id === id);
         return programPosition;
     };
-    // getUserId(id){
-    //     let userPosition = this.state.users.find(el => el._id ===id);
-    //     return userPosition;
-    //     console.log(userPosition);
-    // }
-    //
-    // renderUser (props, id) {
-    //     let user = this.getUserId(id);
-    //     return <FavoriteList {...props}
-    //         user={user}
-    //         users={this.state.users}
-    //     />
-    // }
 
     renderProgram = (props, id) => {
         let program = this.getProgramId(id);
@@ -124,14 +105,6 @@ class App extends Component{
                                    </div>
                                }
                         />
-                        <Route exact path ={`/userSchedule`}
-                             render = {(props) =>
-                                 <FavoriteList {...props}
-                                     users = {this.state.users}
-                                     favorite={props.match.params.favorite}
-                                 />
-                             }
-                    />
 
                     </Switch>
                 </Router>

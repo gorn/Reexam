@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const Tvchannels = require('../../schemas/TvChannel');
+const tvchannels = require('../../schemas/TvChannel');
 
 
 router.get('/', (req,res) => {
-    Tvchannels.find({})
+    tvchannels.find({})
         .exec()
         .then(tvchannels =>res.json(tvchannels))
         .catch(err => res.send(err))
