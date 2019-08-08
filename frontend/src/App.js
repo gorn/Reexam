@@ -20,7 +20,6 @@ class App extends Component{
 
     channelsStore(){
         let tvchannels = this.state.tvchannels;
-        console.log(tvchannels);
         localStorage.setItem("tvchannels", JSON.stringify(tvchannels))
     }
 
@@ -37,16 +36,14 @@ class App extends Component{
     }
 
     async getPrograms () {
-        const response = await fetch(
-            `https://jobappexam.herokuapp.com/api/programs`
-        );
+        const response = await fetch(`https://jobappexam.herokuapp.com/api/programs`);
         const json = await response.json();
         this.setState({ programs: json });
         this.programStore();
     }
 
     async getTvChannels(){
-        const response = await fetch(`https://jobappexam.herokuapp.com/api/tvchannel` );
+        const response = await fetch(`https://jobappexam.herokuapp.com/api/tvchannel`);
         const json = await response.json();
         this.setState({tvchannels: json});
         this.channelsStore();
@@ -81,20 +78,22 @@ class App extends Component{
                                }
                         />
 
-                        <Route exact path={`/programs/:tvchannels`}
+                        <Route exact path={`/programs/:tvchannelname`}
                                render={(props) =>
                                    <Programs {...props}
                                                  programs={this.state.programs}
-                                                 tvchannel={props.match.params.tvchannel}
-
+                                                 tvchannels={this.state.tvchannels}
                                    />
                                }
                         />
-                        <Route exact path={'/program/:id'}
+                        <Route exact path={'/program/:programid'}
                                render={(props) =>
-                                   this.renderProgram(props, props.match.params.id)
-                               }
-                        />
+                                <Program {...props}
+                                    programs={this.state.programs}
+                                    tvchannels={this.state.tvchannels}
+                                />
+                            }
+                     />
                         <Route exact path={'/login'}
                                render={(props) =>
                                    <div>
