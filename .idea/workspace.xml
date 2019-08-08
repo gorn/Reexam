@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b96b2cfa-b119-472c-aaea-67feb00ef68b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/TvChannels.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/TvChannels.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api/programs.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/programs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schemas/Programs.js" beforeDir="false" afterPath="$PROJECT_DIR$/schemas/Programs.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,17 +20,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/api/programs.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+            <state relative-caret-position="136">
+              <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/schemas/Programs.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+            <state relative-caret-position="136">
+              <caret line="8" column="60" selection-start-line="8" selection-start-column="60" selection-end-line="8" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -46,7 +47,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/src/components/TvChannels.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
@@ -70,8 +71,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/api/tvchannel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+            <state relative-caret-position="187">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
@@ -139,15 +140,15 @@
         <option value="$PROJECT_DIR$/babel.config.js" />
         <option value="$PROJECT_DIR$/frontend/package.json" />
         <option value="$PROJECT_DIR$/schemas/Favorite.js" />
-        <option value="$PROJECT_DIR$/schemas/Programs.js" />
         <option value="$PROJECT_DIR$/schemas/TvStations.js" />
         <option value="$PROJECT_DIR$/routes/api/favorite.js" />
         <option value="$PROJECT_DIR$/server.js" />
         <option value="$PROJECT_DIR$/schemas/TvChannel.js" />
-        <option value="$PROJECT_DIR$/routes/api/programs.js" />
-        <option value="$PROJECT_DIR$/routes/api/tvchannel.js" />
         <option value="$PROJECT_DIR$/frontend/src/App.js" />
         <option value="$PROJECT_DIR$/frontend/src/components/TvChannels.js" />
+        <option value="$PROJECT_DIR$/routes/api/tvchannel.js" />
+        <option value="$PROJECT_DIR$/schemas/Programs.js" />
+        <option value="$PROJECT_DIR$/routes/api/programs.js" />
       </list>
     </option>
   </component>
@@ -321,21 +322,7 @@
       <workItem from="1563712176584" duration="7025000" />
       <workItem from="1564988679640" duration="29543000" />
       <workItem from="1565075868933" duration="55993000" />
-      <workItem from="1565204873812" duration="10244000" />
-    </task>
-    <task id="LOCAL-00044" summary="FE linking logs12&#10;                      Adding favorite list 3">
-      <created>1565094301529</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1565094301529</updated>
-    </task>
-    <task id="LOCAL-00045" summary="FE linking logs13&#10;                      Adding favorite list 3">
-      <created>1565095842821</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1565095842821</updated>
+      <workItem from="1565204873812" duration="10854000" />
     </task>
     <task id="LOCAL-00046" summary="FE linking logs14&#10;                      Adding favorite list 3">
       <created>1565096215364</created>
@@ -666,11 +653,25 @@
       <option name="project" value="LOCAL" />
       <updated>1565253809488</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="sorting Fe4">
+      <created>1565254113705</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1565254113705</updated>
+    </task>
+    <task id="LOCAL-00094" summary="sorting Fe5">
+      <created>1565254458024</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1565254458024</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="246767000" />
+    <option name="totallyTimeSpent" value="247377000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -720,8 +721,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="FE linking logs31&#10;                      Adding favorite list 3" />
-    <MESSAGE value="FE linking logs32&#10;                      Adding favorite list 3" />
     <MESSAGE value="FE linking logs33&#10;                      Adding favorite list 3" />
     <MESSAGE value="FE linking logs34&#10;                      Adding favorite list 3" />
     <MESSAGE value="FE linking logs35&#10;                      Adding favorite list 3" />
@@ -745,7 +744,9 @@
     <MESSAGE value="sorting Fe1" />
     <MESSAGE value="sorting Fe2" />
     <MESSAGE value="sorting Fe3" />
-    <option name="LAST_COMMIT_MESSAGE" value="sorting Fe3" />
+    <MESSAGE value="sorting Fe4" />
+    <MESSAGE value="sorting Fe5" />
+    <option name="LAST_COMMIT_MESSAGE" value="sorting Fe5" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -970,27 +971,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/schemas/TvChannel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="56" selection-start-line="7" selection-start-column="56" selection-end-line="7" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/api/programs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/api/tvchannel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/components/Programs.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -998,13 +978,6 @@
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schemas/Programs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -1025,6 +998,34 @@
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/api/tvchannel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schemas/TvChannel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="56" selection-start-line="7" selection-start-column="56" selection-end-line="7" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/api/programs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schemas/Programs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="60" selection-start-line="8" selection-start-column="60" selection-end-line="8" selection-end-column="60" />
         </state>
       </provider>
     </entry>
