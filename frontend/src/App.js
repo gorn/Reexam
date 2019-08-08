@@ -52,19 +52,19 @@ class App extends Component{
     }
 
     getTvChannels () {
-        fetch(`https://jobappexam.herokuapp.com/api/tvchannels`)
+        fetch(`https://jobappexam.herokuapp.com/api/tvchannel`)
              .then(response => response.json())
              .then(res => {this.setState({ tvchannels: res.tvchannels }); } );
         this.channelsStore();
     };
 
-    getFavoriteList(){
-        fetch (`https://jobappexam.herokuapp.com/api/users/favorite`)
-            .then(response => response.json())
-            .then(res=>{this.setState({users:res.users})
-            });
-        this.favoriteStore();
-    }
+    // getFavoriteList(){
+    //     fetch (`https://jobappexam.herokuapp.com/api/users/favorite`)
+    //         .then(response => response.json())
+    //         .then(res=>{this.setState({users:res.users})
+    //         });
+    //     this.favoriteStore();
+    // }
 
     getProgramId (id)  {
         let programPosition = this.state.programs.find(el => el._id === id);
