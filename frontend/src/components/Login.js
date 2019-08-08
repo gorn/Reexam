@@ -6,7 +6,8 @@ class Login extends Component{
         super(props);
         this.state = {
             userName: '',
-            password: ''
+            password: '',
+            id: ''
         };
     }
     handleInputChange = (event) => {
@@ -26,7 +27,8 @@ class Login extends Component{
       }).then(res => {
           if (res.status === 200) {
               console.log('hello world');
-              this.props.history.push('/post');
+              console.log(res);
+              this.props.history.push(`/userSchedule`);
 
           }else{
               const error = new Error(res.error);
@@ -39,7 +41,7 @@ class Login extends Component{
     render() {
         return(
             <form onSubmit={this.onSubmit}>
-                <h1>Login for posting jobs</h1>
+                <h1>Login</h1>
                 <div>
                     <input
                         type="name"

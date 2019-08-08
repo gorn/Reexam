@@ -1,13 +1,11 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import Post from './components/Post';
 import TvChannels from "./components/TvChannels";
-import Locations from "./components/Locations";
-import JobPosts from "./components/JobPosts";
-import Job from "./components/Job";
+import Programs from "./components/Programs";
+import Program from "./components/Program";
 import Login from "./components/Login";
 import AuthServise from "./components/AuthServise";
-import SuccessLogin from "./components/LoginSuccess";
+import FavoriteList from "./components/FavoriteList";
 
 
 class App extends Component{
@@ -17,12 +15,14 @@ class App extends Component{
         this.state = {
             tvchannels: [],
             programs: [],
-            user: {}
-        };
+            users: {}
+        }
+        ;
     }
 
     channelsStore(){
         let tvchannels = this.state.tvchannels;
+        console.log(tvchannels);
         localStorage.setItem("tvchannels", JSON.stringify(tvchannels))
     }
 
@@ -30,6 +30,7 @@ class App extends Component{
         let programs = this.state.programs;
         localStorage.setItem("programs", JSON.stringify(programs))
     }
+
 
     componentDidMount() {
         //await data.
@@ -42,16 +43,18 @@ class App extends Component{
             `https://jobappexam.herokuapp.com/api/programs`
         );
         const json = await response.json();
-        this.setState({ jobs: json });
+        this.setState({ programs: json });
         this.programStore();
     }
 
     getTvChannels () {
-        fetch(`https://jobappexam.herokuapp.com/api/tvchannels`)
+        fetch(`https://jobappexam.herokuapp.com/api/tvchannel`)
              .then(response => response.json())
              .then(res => {this.setState({ tvchannels: res.tvchannels }); } );
         this.channelsStore();
+        console.log(this.state.tvchannels);
     };
+
 
     getProgramId (id)  {
         let programPosition = this.state.programs.find(el => el._id === id);
@@ -81,21 +84,12 @@ class App extends Component{
                                }
                         />
 
-                        <Route exact path={`/jobs/`}
-                               render={(props) =>
-                                   <TvChannels {...props}
-                                               jobs={this.state.jobs}
-                                               category={props.match.params.category}
-                                               area={this.state.area}
-                                   />
-                               }
-                        />
-
                         <Route exact path={`/programs/:tvchannels`}
                                render={(props) =>
-                                   <JobPosts {...props}
-                                                 jobs={this.state.jobs}
-                                                 category={props.match.params.category}
+                                   <Programs {...props}
+                                                 programs={this.state.programs}
+                                                 tvchannel={props.match.params.tvchannel}
+
                                    />
                                }
                         />
@@ -111,15 +105,6 @@ class App extends Component{
                                    </div>
                                }
                         />
-                        {/*<Route path="/loginSuccess" component={AuthServise(SuccessLogin)} />*/}
-                        {/*<Route exact path={'/post'}*/}
-                               {/*render={(props) =>*/}
-                                   {/*<Post {...props}*/}
-                                         {/*categories={this.state.categories}*/}
-                                         {/*areas={this.state.areas}*/}
-                                   {/*/>*/}
-                               {/*}*/}
-                        {/*/>*/}
 
                     </Switch>
                 </Router>

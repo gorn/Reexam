@@ -6,8 +6,8 @@ const ProgramsSchema = new Schema({
     description: {type: String, required: true},
     first: {type: Date, required: true},
     next: {type: Date, required: true},
-    tvchannel: {type: Schema.Types.ObjectId, ref:'tvchannel'},
-    user: {type:Schema.Types.ObjectId, ref: 'user'}
+    tvchannel: {type: Schema.Types.ObjectId, ref:'tvchannels'}
+
 });
-module.exports = Programs = mongoose.model('programs', ProgramsSchema);
+module.exports = program = mongoose.model('program', ProgramsSchema);
 

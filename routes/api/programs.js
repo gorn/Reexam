@@ -6,24 +6,12 @@ const authentication = require('../../authentication');
 
 router.get('/', (req, res) =>{
     Programs.find({})
-        .populate('user')
-        .populate('tvchannel')
+        .populate('tvchannels')
         .exec()
-            .then(program =>res.json(program))
+            .then(Programs =>res.json(Programs))
             .catch(err => res.send(err))
 });
 
-router.post('/programs/post', (req, res) => {
-    const newPrograms = req.body;
-    const programs = new Programs({
-        title: newPrograms.title,
-        description: newPrograms.description,
-        first: newPrograms.first,
-        next: newPrograms.next,
-        tvchannel: newPrograms.tvchannel,
-        user: newPrograms.user
-    });
-    programs.save();
-    res.json({programs: newPrograms})
-});
+
+
 module.exports = router;
