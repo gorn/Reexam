@@ -10,14 +10,5 @@ router.get('/', (req,res) => {
         .catch(err => res.send(err))
 });
 
-router.post('/', (req, res) => {
-    const newStations = req.body
-    const stations = new Tvchannels ({
-        name: newStations.name,
-        namePath: newStations.namePath
-    });
-    stations.save();
-    res.json({tvchannels: newStations});
-})
 
 module.exports = router;
