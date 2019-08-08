@@ -21,7 +21,7 @@ class App extends Component{
     }
 
     channelsStore(){
-        let tvchannels = this.state.tvchannel;
+        let tvchannels = this.state.tvchannels;
         localStorage.setItem("tvchannels", JSON.stringify(tvchannels))
     }
 
