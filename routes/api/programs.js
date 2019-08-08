@@ -6,7 +6,7 @@ const authentication = require('../../authentication');
 
 router.get('/', (req, res) =>{
     Programs.find({})
-        .populate('tvchannel')
+        .populate('tvchannels')
         .exec()
             .then(Programs =>res.json(Programs))
             .catch(err => res.send(err))
@@ -19,7 +19,7 @@ router.post('/programs/post', (req, res) => {
         description: newPrograms.description,
         first: newPrograms.first,
         next: newPrograms.next,
-        tvchannel: newPrograms.tvchannel
+        tvchannels: newPrograms.tvchannels
     });
     programs.save();
     res.json({programs: newPrograms})

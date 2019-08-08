@@ -1,23 +1,23 @@
 const express = require('express');
 const router = express.Router();
-const Tvchannel = require('../../schemas/TvChannel');
+const Tvchannels = require('../../schemas/TvChannel');
 
 
 router.get('/', (req,res) => {
-    Tvchannel.find({})
+    Tvchannels.find({})
         .exec()
-        .then(tvchannel =>res.json(tvchannel))
+        .then(tvchannels =>res.json(tvchannels))
         .catch(err => res.send(err))
 });
 
 router.post('/', (req, res) => {
     const newStations = req.body
-    const stations = new Tvchannel ({
+    const stations = new Tvchannels ({
         name: newStations.name,
         namePath: newStations.namePath
     });
     stations.save();
-    res.json({tvchannel: newStations});
+    res.json({tvchannels: newStations});
 })
 
 module.exports = router;

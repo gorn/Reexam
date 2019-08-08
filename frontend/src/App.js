@@ -13,7 +13,7 @@ class App extends Component{
         super(props);
 
         this.state = {
-            tvchannel: [],
+            tvchannels: [],
             programs: [],
             users: {}
         }
@@ -30,10 +30,6 @@ class App extends Component{
         localStorage.setItem("programs", JSON.stringify(programs))
     }
 
-    favoriteStore() {
-        let favoritelist = this.state.users;
-        localStorage.setItem("favorite", JSON.stringify(favoritelist))
-    }
 
     componentDidMount() {
         //await data.
@@ -54,7 +50,7 @@ class App extends Component{
     getTvChannels () {
         fetch(`https://jobappexam.herokuapp.com/api/tvchannel`)
              .then(response => response.json())
-             .then(res => {this.setState({ tvchannel: res.tvchannel }); } );
+             .then(res => {this.setState({ tvchannels: res.tvchannels }); } );
         this.channelsStore();
     };
 
@@ -102,7 +98,7 @@ class App extends Component{
                                render={(props) =>
                                    <div>
                                        <TvChannels {...props} programs={this.state.programs}
-                                                       tvchannels={this.state.tvchannel}/>
+                                                       tvchannels={this.state.tvchannels}/>
                                    </div>
                                }
                         />

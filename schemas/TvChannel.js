@@ -5,4 +5,4 @@ const TvChannelsSchema = new Schema({
     name: {type: String},
     namePath: {type: String}
 });
-module.exports = tvchannel = mongoose.model('tvchannel', TvChannelsSchema);
+module.exports = tvchannels = mongoose.model('tvchannels', TvChannelsSchema);
