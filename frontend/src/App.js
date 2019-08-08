@@ -102,7 +102,7 @@ class App extends Component{
                                render={(props) =>
                                    <div>
                                        <TvChannels {...props} programs={this.state.programs}
-                                                       tvchannels={this.state.tvchannels}/>
+                                                       tvchannels={this.state.tvchannel}/>
                                    </div>
                                }
                         />
