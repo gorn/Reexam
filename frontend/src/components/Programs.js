@@ -5,8 +5,10 @@ class Programs extends Component{
   render() {
 
     const tvchannelName = this.props.match.params.tvchannels;
+    console.log(tvchannelName);
 
     let programs = this.props.programs;
+    console.log(programs);
 
     programs = programs.filter (program => (tvchannelName === program.tvchannel.name) );
 //    if(programs <=0) {

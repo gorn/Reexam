@@ -4,8 +4,7 @@ import {Link} from "react-router-dom";
 class TvChannels extends Component{
 
         render() {
-            console.log(this.props.tvchannels);
-            console.log(this.props);
+
             return(
             <div>
                 <Link to ={"/login"}> <p>Login</p></Link>

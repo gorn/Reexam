@@ -4,8 +4,6 @@ import TvChannels from "./components/TvChannels";
 import Programs from "./components/Programs";
 import Program from "./components/Program";
 import Login from "./components/Login";
-import AuthServise from "./components/AuthServise";
-import FavoriteList from "./components/FavoriteList";
 
 
 class App extends Component{
@@ -14,10 +12,10 @@ class App extends Component{
 
         this.state = {
             tvchannels: [],
-            programs: [],
-            users: {}
+            programs: []
         }
         ;
+        console.log(this.state);
     }
 
     channelsStore(){
@@ -47,13 +45,12 @@ class App extends Component{
         this.programStore();
     }
 
-    getTvChannels () {
-        fetch(`https://jobappexam.herokuapp.com/api/tvchannel`)
-             .then(response => response.json())
-             .then(res => {this.setState({ tvchannels: res.tvchannels }); } );
+    async getTvChannels(){
+        const response = await fetch(`https://jobappexam.herokuapp.com/api/tvchannel` );
+        const json = await response.json();
+        this.setState({tvchannels: json});
         this.channelsStore();
-        console.log(this.state.tvchannels);
-    };
+    }
 
 
     getProgramId (id)  {
